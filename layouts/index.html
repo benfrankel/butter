@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Title</title>
-  </head>
-  <body>
-    Hi
-  </body>
-</html>
+{{ partial "html-begin.html" . }}
+<article class="markdown">
+  {{ .Content }}
+</article>
+{{ partial "html-end.html" . }}

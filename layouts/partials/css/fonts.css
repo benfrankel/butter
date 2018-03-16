@@ -1,0 +1,27 @@
+{{ range .Site.Params.fonts.local }}
+@font-face {
+    font-family: '{{ .name }}';
+    src: url('{{ $.Site.BaseURL }}fonts/{{ .filename }}');
+}
+{{ end }}
+
+/* Default */
+body {
+    font-family: {{ with .Site.Params.fonts.default }}{{ . }},{{ end }}
+                 serif;
+}
+
+/* Headers */
+#site-header,
+header,
+h1, h2, h3, h4, h5, h6 {
+    font-family: {{ with .Site.Params.fonts.header }}{{ . }},{{ end }}
+                 sans-serif;
+}
+
+/* Code */
+.markdown code,
+.markdown pre {
+    font-family: {{ with .Site.Params.fonts.code }}{{ . }},{{ end }}
+                 monospace;
+}

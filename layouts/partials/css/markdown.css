@@ -1,0 +1,237 @@
+/* Markdown */
+.markdown {
+    color: #313537;
+}
+
+/* Paragraphs */
+.markdown p {
+    {{ if .Site.Params.justify }}
+    text-align: justify;
+    {{ else }}
+    text-align: left;
+    {{ end }}
+    margin-bottom: 1em;
+}
+
+/* Don't justify paragraphs on small screens */
+@media (max-width: 800px) {
+    .markdown p {
+        text-align: left;
+    }
+}
+
+/* Headers */
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+    font-weight: 700;
+    color: #333333;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Header 1 */
+.markdown h1 {
+    font-size: 1.75rem;
+}
+
+/* Header 2 */
+.markdown h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+}
+
+/* Header 3 */
+.markdown h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+/* Headers 4, 5, 6 */
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Code */
+.markdown code,
+.markdown pre {
+    font-size: 0.98rem;
+    line-height: 1.2;
+    background-color: #f7f7f7;
+}
+
+/* Inline code */
+.markdown code {
+    padding: .15em .5em;
+    border-radius: 2px;
+}
+
+/* Code blocks */
+.markdown pre {
+    font-size: 5rem;
+    display: block;
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0px 3px 5px 3px #ccc;
+    line-height: 1.5em;
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
+    font-size: 0.9rem;
+}
+
+/* Inline code as a link */
+.markdown a code {
+    color: #428bca !important;
+}
+
+/* Inline code as a hovered link */
+.markdown a code:hover {
+    text-decoration: underline;
+}
+
+/* Lists */
+.markdown ul,
+.markdown ol,
+.markdown dl {
+    margin-left: 0.75rem;
+}
+
+/* Definition list labels */
+.markdown dt {
+    font-weight: bold;
+}
+
+/* Definition list definitions */
+.markdown dd {
+    margin-bottom: .5rem;
+}
+
+/* Unordered lists */
+.markdown ul {
+    list-style-type: disc;
+    list-style-position: outside;
+    margin-bottom: 1.25rem;
+}
+
+/* Ordered lists */
+.markdown ol {
+    list-style-type: decimal;
+    margin-bottom: 1.25rem;
+}
+
+/* Nested lists */
+.markdown li ul,
+.markdown li ol,
+.markdown li dl {
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+}
+
+/* List items */
+.markdown li {
+    margin-left: 1.5em;
+}
+
+/* Emphasized text */
+.markdown em {
+    font-style: italic;
+}
+
+/* Strong text */
+.markdown strong {
+    font-weight: 700;
+}
+
+/* Horizontal rule */
+.markdown hr {
+    position: relative;
+    margin: 1.75rem 0;
+    border: 0;
+    border-top: 1px solid #808080;
+    border-top: 1px solid #999999;
+}
+
+/* Abbreviations */
+.markdown abbr {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #666666;
+    text-transform: uppercase;
+}
+.markdown abbr[title] {
+    cursor: help;
+    border-bottom: 1px dotted #808080;
+}
+
+/* Blockquotes (again?) */
+.markdown blockquote {
+    padding: .5rem 1rem;
+    margin: .8rem 0;
+    color: #7a7a7a;
+    background-color: #fdfdfd;
+    box-shadow: inset 4px 0 3px #e5e5e5;
+}
+.markdown blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+/* Figures */
+.markdown figure {
+    width: 100%;
+    background: #fff;
+    margin-bottom: 1em;
+}
+
+/* Image figures */
+.markdown figure img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: block;
+    position: static;
+    margin: auto;
+}
+
+/* Tables */
+.markdown table {
+    margin-bottom: 1rem;
+    width: 100%;
+    border: 1px solid #e5e5e5;
+    border-collapse: collapse;
+}
+
+.markdown td,
+.markdown th {
+    padding: .25rem .5rem;
+    border: 1px solid #e5e5e5;
+}
+
+.markdown tbody tr:nth-child(odd) td,
+.markdown tbody tr:nth-child(odd) th {
+    background-color: #f7f7f7;
+}
+
+/* ? */
+.markdown .footnotes ol {
+    list-style-type: decimal;
+    margin-left: 16px;
+}
+
+/* ? */
+.markdown .footnotes li {
+    list-style-type: unset;
+}
+
+/* ? */
+.markdown .footnote-ref {
+    font-size: 0.7em;
+}

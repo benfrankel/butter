@@ -1,0 +1,17 @@
+<footer id="site-footer">
+  <a id="site-copyright-notice"
+     {{ with .Site.Params.LicenseURL }}
+     href="{{ . }}"
+     {{ else }}
+     href="{{ .Site.BaseURL }}doc/LICENSE"
+     {{ end }}>
+    {{ with .Site.Params.CopyrightNotice }}
+    {{ . }}
+    {{ else }}
+    Copyright: {{ printf "%#v" .Site.Author }}
+    {{ end }}
+  </a>
+  <span id="site-contact-icons">
+    Icons
+  </span>
+</footer>
