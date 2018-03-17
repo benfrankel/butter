@@ -29,41 +29,46 @@
 .markdown h6 {
     font-weight: 700;
     color: #333333;
-    margin-top: 2.5rem;
-    margin-bottom: 1.5rem;
+    margin: 1em 0 .5em;
 }
 
-/* Header 1 */
 .markdown h1 {
-    font-size: 1.75rem;
+    font-size: 300%;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    text-align: center;
 }
 
-/* Header 2 */
 .markdown h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1.25rem;
+    font-size: 225%;
+    line-height: 1.1;
+    letter-spacing: -1px;
 }
 
-/* Header 3 */
 .markdown h3 {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
+    font-size: 180%;
+    line-height: 1.3;
 }
 
-/* Headers 4, 5, 6 */
-.markdown h4,
-.markdown h5,
+.markdown h4 {
+    font-size: 150%;
+    line-height: 1.3;
+}
+
+.markdown h5 {
+    font-size: 130%;
+}
+
 .markdown h6 {
-    font-size: 1rem;
-    margin-bottom: .5rem;
+    font-size: 100%;
 }
 
 /* Code */
 .markdown code,
 .markdown pre {
     font-size: .98rem;
-    line-height: 1.2;
-    background-color: #f7f7f7;
+    line-height: 1.25;
+    background-color: #fafafa;
 }
 
 /* Inline code */
@@ -72,20 +77,29 @@
     border-radius: 2px;
 }
 
+.markdown pre code {
+    padding: 0;
+    border-radius: 0;
+}
+
 /* Code blocks */
 .markdown pre {
-    font-size: 5rem;
-    display: block;
-    margin-top: 1.5rem;
-    margin-bottom: 2.5rem;
+    max-width: 100%;
+    margin: 1.5rem 0 2.5rem;
     padding: 1rem;
-    border-radius: .5rem;
-    box-shadow: 0px 3px 5px 3px #ccc;
-    line-height: 1.5em;
+    border-radius: 2px;
     white-space: pre-wrap;
     word-break: break-all;
     word-wrap: break-word;
-    font-size: .9rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
+    transition: all .2s;
+}
+
+.markdown pre:hover,
+.markdown pre:active {
+    max-width: 105%;
+    margin-left: -2.5%;
+    margin-right: -2.5%;
 }
 
 /* Inline code as a link */
@@ -171,33 +185,31 @@
     border-bottom: 1px dotted #808080;
 }
 
-/* Blockquotes (again?) */
+/* Blockquotes */
 .markdown blockquote {
-    padding: .5rem 1rem;
-    margin: .8rem 0;
+    padding: .5rem .5rem .5rem 1.25rem;
+    margin: .8rem 0 .8rem 1rem;
     color: #7a7a7a;
-    background-color: #fdfdfd;
-    box-shadow: inset 4px 0 3px #e5e5e5;
+    font-size: 115%;
+    font-style: italic;
+    background-color: #fafafa;
+    box-shadow: inset 4px 0 4px #eee;
 }
+
 .markdown blockquote p:last-child {
     margin-bottom: 0;
 }
 
-/* Figures */
-.markdown figure {
-    width: 100%;
-    background: #fff;
-    margin-bottom: 1em;
+/* Images */
+.markdown img {
+    max-width: 100%;
+    transition: all .2s;
 }
 
-/* Image figures */
-.markdown figure img {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-    display: block;
-    position: static;
-    margin: auto;
+.markdown img:active,
+.markdown img:focus {
+    max-width: 110%;
+    margin-left: -5%;
 }
 
 /* Tables */
