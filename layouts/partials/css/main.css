@@ -1,4 +1,3 @@
-{{ partial "css/reset.min.css" . }}
 {{ partial "css/layout.css" . }}
 {{ partial "css/site-header.css" . }}
 {{ partial "css/site-footer.css" . }}

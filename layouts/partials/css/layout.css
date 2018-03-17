@@ -15,17 +15,17 @@ body {
     min-height: 100vh;
 }
 
-/* Fill up space with site-content,
-   forcing footer to the bottom */
+/* Fill vertical space with site-content,
+ * forcing footer to the bottom */
 #site-content {
     flex: 1 0 auto;
     max-width: 800px;
     padding: 0 5.55%;
 }
 
-/* Wider body on very wide screens */
+/* Wider content on very wide screens */
 @media (min-width: 2400px) {
-    body {
+    #site-content {
         max-width: 950px;
     }
 }

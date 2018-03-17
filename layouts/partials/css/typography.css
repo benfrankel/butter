@@ -18,6 +18,7 @@ a {
     {{ else }}
     color: dodgerblue;
     {{ end }}
+    text-decoration: none;
 }
 
 /* Hovered link */
