@@ -1,4 +1,4 @@
-{{ range .Site.Params.fonts.local }}
+{{ range .Site.Params.Fonts.Local }}
 @font-face {
     font-family: '{{ .name }}';
     src: url('{{ $.Site.BaseURL }}fonts/{{ .filename }}');
@@ -7,21 +7,39 @@
 
 /* Default */
 body {
-    font-family: {{ with .Site.Params.fonts.default }}{{ . }},{{ end }}
-                 serif;
+    {{ with .Site.Params.Fonts.Default }}
+    font-family: {{ . }};
+    {{ else }}
+    font-family: serif;
+    {{ end }}
 }
 
-/* Headers */
+/* Title */
+#site-title {
+    {{ with .Site.Params.Fonts.Title }}
+    font-family: {{ . }};
+    {{ else }}
+    font-family: serif;
+    {{ end }}
+}
+
+/* Header */
 #site-header,
 header,
 h1, h2, h3, h4, h5, h6 {
-    font-family: {{ with .Site.Params.fonts.header }}{{ . }},{{ end }}
-                 sans-serif;
+    {{ with .Site.Params.Fonts.Header }}
+    font-family: {{ . }};
+    {{ else }}
+    font-family: sans-serif;
+    {{ end }}
 }
 
 /* Code */
 .markdown code,
 .markdown pre {
-    font-family: {{ with .Site.Params.fonts.code }}{{ . }},{{ end }}
-                 monospace;
+    {{ with .Site.Params.Fonts.Code }}
+    font-family: {{ . }};
+    {{ else }}
+    font-family: monospace;
+    {{ end }}
 }

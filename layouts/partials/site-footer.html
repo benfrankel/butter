@@ -1,4 +1,5 @@
 <footer id="site-footer">
+  <!-- Copyright notice -->
   <a id="site-copyright-notice"
      {{ with .Site.Params.LicenseURL }}
      href="{{ . }}"
@@ -11,7 +12,29 @@
     Copyright: {{ printf "%#v" .Site.Author }}
     {{ end }}
   </a>
+
+  <!-- Contact icons -->
   <span id="site-contact-icons">
-    Icons
+    {{ with .Site.Params.Email }}
+    <a href="mailto:{{ . }}">
+      {{ partial "svg/fa-envelope.svg" . }}
+    </a>
+    {{ end }}
+    
+    {{ with .Site.Params.Github }}
+    <a href="https://github.com/{{ . }}">
+      {{ partial "svg/fa-github.svg" . }}
+    </a>
+    {{ end }}
+
+    {{ with .Site.Params.Linkedin }}
+    <a href="https://linkedin.com/in/{{ . }}">
+      {{ partial "svg/fa-linkedin.svg" . }}
+    </a>
+    {{ end }}
+
+    <a href="index.xml">
+      {{ partial "svg/fa-rss.svg" . }}
+    </a>
   </span>
 </footer>

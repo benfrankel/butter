@@ -3,11 +3,6 @@
   
   <title>{{ .Site.Title }}</title>
 
-  <style type="text/css">
-    {{ partial "css/main.css" . | safeCSS }}
-  </style>
-  
-  <script type="text/javascript">
-    {{ partial "js/main.js" . | safeJS }}
-  </script>
+  {{ partial "head-style.html" . }}
+  {{ partial "head-script.html" . }}
 </head>

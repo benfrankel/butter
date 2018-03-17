@@ -1,6 +1,48 @@
+/* Arrange footer */
 #site-footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: flex-start;
     padding: 1em 0;
+}
+
+/* Color copyright notice */
+#site-copyright-notice:inactive {
+    color: #777;
+}
+
+#site-copyright-notice:hover {
+    color: inherit;
+}
+
+/* Arrange icons */
+#site-contact-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* Icon color and spacing */
+#site-contact-icons > a {
+    fill: grey;
+    margin: 0 5px;
+}
+
+/* Hovered icon color */
+#site-contact-icons > a:hover {
+    fill: black;
+}
+
+/* Set icons to same height */
+#site-contact-icons svg {
+    height: 1.1em;
+}
+
+/* Stack footer on narrower screens */
+@media (max-width: 700px) {
+    #site-footer {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
 }

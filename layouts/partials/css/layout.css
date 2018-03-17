@@ -10,5 +10,12 @@ html {
 body {
     max-width: 800px;
     margin: 0 auto;
-    padding: 0 50px;
+    padding: 0 5.55%;
+}
+
+/* Wider body on very wide screens */
+@media (min-width: 2400px) {
+    body {
+        max-width: 950px;
+    }
 }
