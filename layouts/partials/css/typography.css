@@ -9,15 +9,8 @@ body {
 
 /* Link */
 a {
-    {{ $bg := "white" }};
-    {{ $fg := .Site.Params.Color.Link | default "dodgerblue" }};
-    color: {{ $fg }};
+    color: {{ .Site.Params.Color.Link | default "dodgerblue" }};
     text-decoration: none;
-    text-shadow: .03em 0 {{ $bg }}, -.03em 0 {{ $bg }}, 0 .03em {{ $bg }}, 0 -.03em {{ $bg }}, .06em 0 {{ $bg }}, -.06em 0 {{ $bg }}, .09em 0 {{ $bg }}, -.09em 0 {{ $bg }}, .12em 0 {{ $bg }}, -.12em 0 {{ $bg }}, .15em 0 {{ $bg }}, -.15em 0 {{ $bg }};
-    background-image: linear-gradient({{ $bg }}, {{ $bg }}), linear-gradient({{ $bg }}, {{ $bg }}), linear-gradient({{ $fg }}, {{ $fg }});
-    background-size: .05em 1px, .05em 1px, 1px 1px;
-    background-repeat: no-repeat, no-repeat, repeat-x;
-    background-position: 0% 90%, 100% 90%, 0% 90%;
 }
 
 /* Hovered link */
@@ -25,7 +18,7 @@ a:hover,
 a:focus,
 a:active {
     color: {{ .Site.Params.Color.LinkHover | default "inherit" }};
-    background-image: linear-gradient({{ $bg }}, {{ $bg }}), linear-gradient({{ $bg }}, {{ $bg }}), linear-gradient(black, black);
+    text-decoration: underline;
 }
 
 /* Smaller text on very narrow screens */

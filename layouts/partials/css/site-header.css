@@ -8,7 +8,7 @@
 
 /* Don't underline header links */
 #site-header a {
-    background-image: none;
+    text-decoration: none;
 }
 
 #site-title {

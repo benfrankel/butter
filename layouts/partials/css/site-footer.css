@@ -16,11 +16,6 @@
     width: 100%;
 }
 
-/* Remove underline from links */
-#site-footer a {
-    background-image: none;
-}
-
 /* Arrange icons */
 #site-contact-icons {
     display: flex;

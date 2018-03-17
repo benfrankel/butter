@@ -32,29 +32,13 @@
   
   <!-- Copyright notice -->
   <a id="site-copyright-notice"
-     {{ with .Site.Params.LicenseURL }}
-     href="{{ . }}"
-     {{ else }}
-     href="{{ .Site.BaseURL }}doc/LICENSE"
-     {{ end }}>
-    {{ with .Site.Params.CopyrightNotice }}
-    {{ . }}
-    {{ else }}
-    Copyright: {{ .Site.Author }}
-    {{ end }}
+     href="{{ .Site.Params.LicenseURL | default (print .Site.BaseURL "doc/LICENSE") }}">
+    {{ .Site.Params.CopyrightNotice | default (print "Copyright - " .Site.Author) }}
   </a>
   
   <!-- Powered by Hugo -->
   <a id="site-powered-by"
-     {{ with .Site.Params.LicenseURL }}
-     href="{{ . }}"
-     {{ else }}
-     href="{{ .Site.BaseURL }}doc/LICENSE"
-     {{ end }}>
-    {{ with .Site.Params.PoweredBy }}
-    Powered by {{ . }}
-    {{ else }}
-    Powered by Hugo
-    {{ end }}
+     href="{{ .Site.Params.AttributionURL | default "https://gohugo.io" }}">
+    {{ .Site.Params.AttributionNotice | default "Powered by Hugo" }}
   </a>
 </footer>
