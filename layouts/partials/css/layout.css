@@ -1,15 +1,25 @@
-/* Background color */
 html {
     {{ with .Site.Params.Color.Background }}
     background-color: {{ . }};
     {{ else }}
     background-color: #ffffe0;
     {{ end }}
+    height: auto;
+    min-height: 100%;
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Fill up space with site-content,
+   forcing footer to the bottom */
+#site-content {
+    flex: 1 0 auto;
     max-width: 800px;
-    margin: 0 auto;
     padding: 0 5.55%;
 }
 

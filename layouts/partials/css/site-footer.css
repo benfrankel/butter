@@ -1,19 +1,19 @@
 /* Arrange footer */
 #site-footer {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 1em 0;
-}
-
-/* Color copyright notice */
-#site-copyright-notice:inactive {
-    color: #777;
-}
-
-#site-copyright-notice:hover {
-    color: inherit;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1.5em 0;
+    margin-top: 2em;
+    font-style: italic;
+    font-size: .9em;
+    line-height: 1.5;
+    border-width: 1px 0 0 0;
+    border-style: solid;
+    border-image: linear-gradient(to right, rgba(0, 0, 0, .1), rgba(0, 0, 0, .2), rgba(0, 0, 0, .1)) 1;
+    background-color: #fafafa;
+    width: 100%;
 }
 
 /* Arrange icons */

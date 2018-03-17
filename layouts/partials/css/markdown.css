@@ -55,13 +55,13 @@
 .markdown h5,
 .markdown h6 {
     font-size: 1rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: .5rem;
 }
 
 /* Code */
 .markdown code,
 .markdown pre {
-    font-size: 0.98rem;
+    font-size: .98rem;
     line-height: 1.2;
     background-color: #f7f7f7;
 }
@@ -79,13 +79,13 @@
     margin-top: 1.5rem;
     margin-bottom: 2.5rem;
     padding: 1rem;
-    border-radius: 0.5rem;
+    border-radius: .5rem;
     box-shadow: 0px 3px 5px 3px #ccc;
     line-height: 1.5em;
     white-space: pre-wrap;
     word-break: break-all;
     word-wrap: break-word;
-    font-size: 0.9rem;
+    font-size: .9rem;
 }
 
 /* Inline code as a link */
@@ -102,7 +102,7 @@
 .markdown ul,
 .markdown ol,
 .markdown dl {
-    margin-left: 0.75rem;
+    margin-left: .75rem;
 }
 
 /* Definition list labels */
@@ -132,8 +132,8 @@
 .markdown li ul,
 .markdown li ol,
 .markdown li dl {
-    margin-top: 0.2rem;
-    margin-bottom: 0.2rem;
+    margin-top: .2rem;
+    margin-bottom: .2rem;
 }
 
 /* List items */
@@ -151,18 +151,17 @@
     font-weight: 700;
 }
 
-/* Horizontal rule */
+/* Fancy horizontal rule */
 .markdown hr {
-    position: relative;
-    margin: 1.75rem 0;
+    margin: 0;
     border: 0;
-    border-top: 1px solid #808080;
-    border-top: 1px solid #999999;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, .1), rgba(0, 0, 0, .2), rgba(0, 0, 0, .1));
 }
 
 /* Abbreviations */
 .markdown abbr {
-    font-size: 0.85rem;
+    font-size: .85rem;
     font-weight: bold;
     color: #666666;
     text-transform: uppercase;
@@ -233,5 +232,5 @@
 
 /* ? */
 .markdown .footnote-ref {
-    font-size: 0.7em;
+    font-size: .7em;
 }

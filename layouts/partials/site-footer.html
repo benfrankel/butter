@@ -1,23 +1,15 @@
 <footer id="site-footer">
-  <!-- Copyright notice -->
-  <a id="site-copyright-notice"
-     {{ with .Site.Params.LicenseURL }}
-     href="{{ . }}"
-     {{ else }}
-     href="{{ .Site.BaseURL }}doc/LICENSE"
-     {{ end }}>
-    {{ with .Site.Params.CopyrightNotice }}
-    {{ . }}
-    {{ else }}
-    Copyright: {{ printf "%#v" .Site.Author }}
-    {{ end }}
-  </a>
-
   <!-- Contact icons -->
   <span id="site-contact-icons">
     {{ with .Site.Params.Email }}
     <a href="mailto:{{ . }}">
       {{ partial "svg/fa-envelope.svg" . }}
+    </a>
+    {{ end }}
+    
+    {{ with .Site.Params.Twitter }}
+    <a href="https://twitter.com/{{ . }}">
+      {{ partial "svg/fa-twitter.svg" . }}
     </a>
     {{ end }}
     
@@ -37,4 +29,32 @@
       {{ partial "svg/fa-rss.svg" . }}
     </a>
   </span>
+  
+  <!-- Copyright notice -->
+  <a id="site-copyright-notice"
+     {{ with .Site.Params.LicenseURL }}
+     href="{{ . }}"
+     {{ else }}
+     href="{{ .Site.BaseURL }}doc/LICENSE"
+     {{ end }}>
+    {{ with .Site.Params.CopyrightNotice }}
+    {{ . }}
+    {{ else }}
+    Copyright: {{ .Site.Author }}
+    {{ end }}
+  </a>
+  
+  <!-- Powered by Hugo -->
+  <a id="site-powered-by"
+     {{ with .Site.Params.LicenseURL }}
+     href="{{ . }}"
+     {{ else }}
+     href="{{ .Site.BaseURL }}doc/LICENSE"
+     {{ end }}>
+    {{ with .Site.Params.PoweredBy }}
+    Powered by {{ . }}
+    {{ else }}
+    Powered by Hugo
+    {{ end }}
+  </a>
 </footer>
