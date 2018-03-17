@@ -38,11 +38,3 @@
 #site-contact-icons svg {
     height: 1.1em;
 }
-
-/* Stack footer on narrower screens */
-@media (max-width: 700px) {
-    #site-footer {
-        flex-direction: column-reverse;
-        align-items: center;
-    }
-}
