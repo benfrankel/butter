@@ -1,6 +1,6 @@
-<div id="site-header">
+<header id="site-header">
   <a href="{{ .Site.BaseURL }}">
-    <header id="site-title">{{ .Site.Title }}</header>
+    <span id="site-title" class="title">{{ .Site.Title }}</span>
   </a>
   
   <nav id="site-nav">
@@ -8,4 +8,4 @@
     <a href="{{ $.Site.BaseURL }}{{ index . 1 }}/">{{ index . 0 }}</a>
     {{ end }}
   </nav>
-</div>
+</header>

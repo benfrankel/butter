@@ -102,7 +102,8 @@
 .markdown ul,
 .markdown ol,
 .markdown dl {
-    margin-left: .75rem;
+    padding: 0;
+    margin-left: .5rem;
 }
 
 /* Definition list labels */
@@ -132,8 +133,7 @@
 .markdown li ul,
 .markdown li ol,
 .markdown li dl {
-    margin-top: .2rem;
-    margin-bottom: .2rem;
+    margin: .15rem 0 .15rem .25rem;
 }
 
 /* List items */

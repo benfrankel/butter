@@ -15,18 +15,19 @@ body {
 }
 
 /* Title */
-#site-title {
-    {{ with .Site.Params.Fonts.Title }}
-    font-family: {{ . }};
-    {{ else }}
-    font-family: serif;
-    {{ end }}
+.title {
+    font-family: {{ .Site.Params.Fonts.Title | default "sans-serif" }};
 }
 
 /* Header */
 #site-header,
 header,
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     {{ with .Site.Params.Fonts.Header }}
     font-family: {{ . }};
     {{ else }}
@@ -35,8 +36,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Code */
-.markdown code,
-.markdown pre {
+code,
+pre {
     {{ with .Site.Params.Fonts.Code }}
     font-family: {{ . }};
     {{ else }}

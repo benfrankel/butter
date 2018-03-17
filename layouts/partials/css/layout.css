@@ -1,9 +1,5 @@
 html {
-    {{ with .Site.Params.Color.Background }}
-    background-color: {{ . }};
-    {{ else }}
-    background-color: #ffffe0;
-    {{ end }}
+    background-color: {{ .Site.Params.Color.Background | default "#ffffe0" }};
     height: auto;
     min-height: 100%;
 }
@@ -12,6 +8,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: auto;
     min-height: 100vh;
 }
 
@@ -19,8 +16,11 @@ body {
  * forcing footer to the bottom */
 #site-content {
     flex: 1 0 auto;
-    max-width: 800px;
+    box-sizing: border-box;
+    margin: 0 auto;
     padding: 0 5.55%;
+    max-width: 800px;
+    width: 100%;
 }
 
 /* Wider content on very wide screens */
