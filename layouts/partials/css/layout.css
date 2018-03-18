@@ -29,3 +29,7 @@ body {
         max-width: 950px;
     }
 }
+
+.zero-margin-top {
+    margin-top: 0 !important;
+}

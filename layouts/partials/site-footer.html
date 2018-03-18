@@ -2,30 +2,30 @@
   <!-- Contact icons -->
   <span id="site-contact-icons">
     {{ with .Site.Params.Email }}
-    <a href="mailto:{{ . }}">
+    <a href="mailto:{{ . }}" title="Email" alt="Email">
       {{ partial "svg/fa-envelope.svg" . }}
     </a>
     {{ end }}
     
     {{ with .Site.Params.Twitter }}
-    <a href="https://twitter.com/{{ . }}">
+    <a href="https://twitter.com/{{ . }}" title="Twitter" alt="Twitter">
       {{ partial "svg/fa-twitter.svg" . }}
     </a>
     {{ end }}
     
     {{ with .Site.Params.Github }}
-    <a href="https://github.com/{{ . }}">
+    <a href="https://github.com/{{ . }}" title="GitHub" alt="GitHub">
       {{ partial "svg/fa-github.svg" . }}
     </a>
     {{ end }}
 
     {{ with .Site.Params.Linkedin }}
-    <a href="https://linkedin.com/in/{{ . }}">
+    <a href="https://linkedin.com/in/{{ . }}" title="Linkedin" alt="Linkedin">
       {{ partial "svg/fa-linkedin.svg" . }}
     </a>
     {{ end }}
 
-    <a href="index.xml">
+    <a href="index.xml" title="RSS" alt="RSS">
       {{ partial "svg/fa-rss.svg" . }}
     </a>
   </span>

@@ -1,6 +1,6 @@
 /* Markdown */
 .markdown {
-    color: #313537;
+    color: {{ .Site.Params.Color.Default | default "#31353a" }};
 }
 
 /* Paragraphs */
@@ -28,7 +28,7 @@
 .markdown h5,
 .markdown h6 {
     font-weight: 700;
-    color: #333333;
+    color: {{ .Site.Params.Color.Header | default "#303048" }};
     margin: 1em 0 .5em;
 }
 
@@ -167,7 +167,7 @@
 
 /* Fancy horizontal rule */
 .markdown hr {
-    margin: 0;
+    margin: 2rem 0;
     border: 0;
     height: 1px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, .1), rgba(0, 0, 0, .2), rgba(0, 0, 0, .1));
@@ -189,11 +189,11 @@
 .markdown blockquote {
     padding: .5rem .5rem .5rem 1.25rem;
     margin: .8rem 0 .8rem 1rem;
-    color: #7a7a7a;
+    color: {{ .Site.Params.Color.Quote | default "#7a7e82" }};
     font-size: 115%;
     font-style: italic;
     background-color: #fafafa;
-    box-shadow: inset 4px 0 4px #eee;
+    box-shadow: inset 4px 0 2px 1px #eee;
 }
 
 .markdown blockquote p:last-child {
@@ -231,18 +231,22 @@
     background-color: #f7f7f7;
 }
 
-/* ? */
+/* Footnote list */
 .markdown .footnotes ol {
     list-style-type: decimal;
     margin-left: 16px;
 }
 
-/* ? */
+/* Footnote list item */
 .markdown .footnotes li {
     list-style-type: unset;
 }
 
-/* ? */
+/* Footnote reference */
 .markdown .footnote-ref {
-    font-size: .7em;
+    font-size: .85em;
+}
+
+.markdown .footnote-ref > a {
+    text-decoration: underline;
 }
