@@ -246,7 +246,7 @@
 
 /* Footnote section header */
 .markdown .footnotes ol:before {
-    content: "Footnotes";
+    content: "Footnotes...";
     font-weight: 700;
     font-size: 120%;
 }

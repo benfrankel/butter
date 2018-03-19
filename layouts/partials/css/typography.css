@@ -2,7 +2,7 @@ body {
     line-height: 1.6;
     text-align: left;
     text-rendering: optimizeLegibility !important;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 300;
     color: {{ .Site.Params.Color.Foreground | default "#202036" }};
 }

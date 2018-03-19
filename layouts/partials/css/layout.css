@@ -26,7 +26,7 @@ body {
 /* Wider content on very wide screens */
 @media (min-width: 2400px) {
     #site-content {
-        max-width: 950px;
+        max-width: 1000px;
     }
 }
 
