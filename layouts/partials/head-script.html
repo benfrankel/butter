@@ -1,6 +1,11 @@
+{{ with (partial "js/main-defer.js" . | safeJS) }}
 <script defer>
-  {{ partial "js/main-defer.js" . | safeJS }}
+  {{ . }}
 </script>
+{{ end }}
+
+{{ with (partial "js/main-async.js" . | safeJS) }}
 <script async>
-  {{ partial "js/main-async.js" . | safeJS }}
+  {{ . }}
 </script>
+{{ end }}

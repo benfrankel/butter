@@ -18,15 +18,15 @@ body {
     flex: 1 0 auto;
     box-sizing: border-box;
     margin: 0 auto;
-    padding: 0 5.55%;
-    max-width: 800px;
+    padding: 0 5%;
+    max-width: calc(850px + 10%);
     width: 100%;
 }
 
 /* Wider content on very wide screens */
-@media (min-width: 2400px) {
+@media (min-width: 2000px) {
     #site-content {
-        max-width: 1000px;
+        max-width: calc(1000px + 10%);
     }
 }
 
