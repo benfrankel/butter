@@ -30,14 +30,14 @@
     </a>
   </span>
   
-  <!-- Copyright notice -->
-  <a id="site-copyright-notice"
+  <!-- License notice -->
+  <a id="site-license-notice"
      href="{{ .Site.Params.LicenseURL | default (print .Site.BaseURL "doc/LICENSE") }}">
     {{ .Site.Params.CopyrightNotice | default (print "Copyright - " .Site.Author) }}
   </a>
   
-  <!-- Powered by Hugo -->
-  <a id="site-powered-by"
+  <!-- Attribution notice -->
+  <a id="site-attribution-notice"
      href="{{ .Site.Params.AttributionURL | default "https://gohugo.io" }}">
     {{ .Site.Params.AttributionNotice | default "Powered by Hugo" }}
   </a>

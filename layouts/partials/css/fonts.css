@@ -7,11 +7,7 @@
 
 /* Default */
 body {
-    {{ with .Site.Params.Fonts.Default }}
-    font-family: {{ . }};
-    {{ else }}
-    font-family: serif;
-    {{ end }}
+    font-family: {{ .Site.Params.Fonts.Default | default "serif" }};
 }
 
 /* Title */
@@ -21,26 +17,18 @@ body {
 
 /* Header */
 #site-header,
-header,
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-    {{ with .Site.Params.Fonts.Header }}
-    font-family: {{ . }};
-    {{ else }}
-    font-family: sans-serif;
-    {{ end }}
+    font-family: {{ .Site.Params.Fonts.Header | default "serif" }};
 }
 
 /* Code */
 code,
-pre {
-    {{ with .Site.Params.Fonts.Code }}
-    font-family: {{ . }};
-    {{ else }}
-    font-family: monospace;
-    {{ end }}
+pre,
+kbd {
+    font-family: {{ .Site.Params.Fonts.Code | default "monospace" }};
 }

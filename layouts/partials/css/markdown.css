@@ -174,12 +174,10 @@
     font-weight: 700;
 }
 
-/* Fancy horizontal rule */
+/* Invisible horizontal rule */
 .markdown hr {
-    margin: 2rem 0;
-    border: 0;
-    height: 1px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, .1), rgba(0, 0, 0, .2), rgba(0, 0, 0, .1));
+    margin: 1.5rem 0;
+    visibility: hidden;
 }
 
 /* Abbreviations */
@@ -240,15 +238,28 @@
     background-color: #f7f7f7;
 }
 
+/* Footnote section */
+.markdown .footnotes {
+    color: {{ .Site.Params.Color.Footnote | default "#666" }};
+    font-size: 90%;
+}
+
+/* Footnote section header */
+.markdown .footnotes ol:before {
+    content: "Footnotes";
+    font-weight: 700;
+    font-size: 120%;
+}
+
 /* Footnote list */
 .markdown .footnotes ol {
     list-style-type: decimal;
-    margin-left: 16px;
+    margin-left: 0;
 }
 
 /* Footnote list item */
 .markdown .footnotes li {
-    list-style-type: unset;
+    margin-left: 2em;
 }
 
 /* Footnote reference */
@@ -256,6 +267,7 @@
     font-size: .85em;
 }
 
+/* Footnote subscript */
 .markdown .footnote-ref > a {
     text-decoration: underline;
 }
