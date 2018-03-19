@@ -18,8 +18,8 @@
   
   <div id="page-list-groups">
     {{ .Data.Pages.GroupByDate "2006" | partial "page-list-by-group.html" }}
-    {{ index .Site.Taxonomies.categories | partial "page-list-by-taxonomy.html" }}
-    {{ index .Site.Taxonomies.tags | partial "page-list-by-taxonomy.html" }}
+    {{ dict "groups" .Site.Taxonomies.categories "type" .Title | partial "page-list-by-taxonomy.html" }}
+    {{ dict "groups" .Site.Taxonomies.tags "type" .Title | partial "page-list-by-taxonomy.html" }}
   </div>
   {{ end }}
 </article>
