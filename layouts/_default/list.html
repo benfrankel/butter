@@ -1,17 +1,48 @@
 {{ partial "html-begin.html" . }}
 <article class="markdown">
-  <header>
-    <h1 class="zero-margin-top">{{ partial "page-title.html" . }}</h1>
-  </header>
+  <h1>{{ .Title }}</h1>
   
-  {{ .Content }}
+  {{ with .Content }}
+  <div>
+    {{ . }}
+    {{ if $.Data.Pages }}<hr>{{ end }}
+  </div>
+  {{ end }}
+
+  {{ if .Data.Pages }}
+  <h2 class="zero-margin-top">
+    Group by: <a href="#"
+                 id="page-list-groupby"
+                 onclick="return group.next();">Year</a>
+  </h2>
   
-  <ul>
-    {{ range .Data.Pages }}
-    <li>
-      <a href="{{ .Permalink }}">{{ .Date }} | {{ .Title }}</a>
-    </li>
-    {{ end }}
-  </ul>
+  <div id="page-list-groups">
+    {{ .Data.Pages.GroupByDate "2006" | partial "page-list-by-group.html" }}
+    {{ index .Site.Taxonomies.categories | partial "page-list-by-taxonomy.html" }}
+    {{ index .Site.Taxonomies.tags | partial "page-list-by-taxonomy.html" }}
+  </div>
+  {{ end }}
 </article>
+
+<script defer>
+  var group = (function() {
+      const sequence = ['Year', 'Category', 'Tag'];
+      var index = sequence.length - 1;
+      var groupby = document.getElementById('page-list-groupby');
+      var groups = document.getElementById('page-list-groups');
+
+      var pub = {};
+
+      pub.next = function() {
+          groups.children[index].style.display = 'none';
+          index = (index + 1) % sequence.length;
+          groupby.innerHTML = sequence[index];
+          groups.children[index].style.display = 'block';
+          return false;
+      };
+
+      return pub;
+  }());
+  group.next();
+</script>
 {{ partial "html-end.html" . }}

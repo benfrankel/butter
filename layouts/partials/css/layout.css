@@ -30,6 +30,44 @@ body {
     }
 }
 
+/* Layout utility classes */
+
 .zero-margin-top {
     margin-top: 0 !important;
+}
+
+.columns,
+.columns-split {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.columns > *,
+.columns-split > * {
+    flex: 1;
+    margin-left: .5em;
+    margin-right: .5em;
+}
+
+.columns > *:first-child,
+.columns-split > *:first-child {
+    margin-left: 0;
+}
+
+.columns > *:last-child,
+.columns-split > *:last-child {
+    margin-right: 0;
+}
+
+.columns-split > * {
+    text-align: center;
+}
+
+.columns-split > *:first-child {
+    text-align: left;
+}
+
+.columns-split > *:last-child {
+    text-align: right;
 }

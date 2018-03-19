@@ -1,0 +1,11 @@
+<div style="display: none;">
+  {{ range . }}
+  <h4>{{ .Key }}</h4>
+  {{ range .Pages.ByDate.Reverse }}
+  <div class="columns-split">
+    <span><a href="{{ .Permalink }}">{{ .Title }}</a></span>
+    <span><em>{{ .Date.Format "January 2, 2006" }}</em></span>
+  </div>
+  {{ end }}
+  {{ end }}
+</div>

@@ -1,0 +1,11 @@
+<div style="display: none;">
+  {{ range $key, $taxonomy := . }}
+  <h4>{{ $key | humanize | title }}</h4>
+  {{ range $taxonomy.Pages.ByDate.Reverse }}
+  <div class="columns-split">
+    <span><a href="{{ .Permalink }}">{{ .Title }}</a></span>
+    <span><em>{{ .Date.Format "January 2, 2006" }}</em></span>
+  </div>
+  {{ end }}
+  {{ end }}
+</div>
