@@ -1,0 +1,10 @@
+{{ partial "html-begin.html" . }}
+<article class="markdown">
+  <h1>{{ .Title }}</h1>
+  
+  {{ with .Content }}
+  <div>
+    {{ . }}
+    {{ if $.Data.Pages }}<hr>{{ end }}
+  </div>
+  {{ end }}

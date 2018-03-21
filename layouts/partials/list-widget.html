@@ -1,0 +1,46 @@
+{{ if .Pages }}
+<h2 class="zero-margin-top">
+  Group by: <a href="#"
+               id="page-list-groupby"
+               onclick="return group.next();"></a>
+</h2>
+
+<div id="page-list-groups">
+  {{ range .Keys }}
+  {{ dict "Groups" (index $.Groupings .) "Pages" $.Pages | partial "list-by-grouping.html" }}
+  {{ end }}
+</div>
+
+<script defer>
+  var group = (function() {
+      var sequence = [{{ range .Keys }}'{{ . }}',{{ end }}];
+      var index = sequence.length - 1;
+      var groupby = document.getElementById('page-list-groupby');
+      var groups = document.getElementById('page-list-groups');
+
+      var pub = {};
+
+      pub.init = function() {
+          for (var i = 0; i < groups.children.length; i++) {
+              groups.children[i].style.display = 'none';
+          }
+          this.next();
+      }
+
+      pub.next = function() {
+          groups.children[index].style.display = 'none';
+          index = (index + 1) % sequence.length;
+          groupby.innerHTML = sequence[index];
+          groups.children[index].style.display = 'block';
+          return false;
+      };
+
+      return pub;
+  }());
+  
+  group.init();
+</script>
+
+{{ else }}
+<h2>No such pages.</h2>
+{{ end }}

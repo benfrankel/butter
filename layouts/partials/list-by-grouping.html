@@ -1,0 +1,23 @@
+<div>
+  {{ range $key, $taxonomy := .Groups }}
+  {{ if in $key "" }}
+  {{ with (intersect $taxonomy.Pages $.Pages).ByDate.Reverse }}
+  <h4>{{ $key | humanize | title }}</h4>
+  {{ range . }}
+  <div class="columns-split">
+    <span><a href="{{ .Permalink }}">{{ .Title }}</a></span>
+    <span><em>{{ .Date.Format "January 2 (2006)" }}</em></span>
+  </div>
+  {{ end }}
+  {{ end }}
+  {{ else }}
+  <h4>{{ .Key }}</h4>
+  {{ range (intersect .Pages $.Pages).ByDate.Reverse }}
+  <div class="columns-split">
+    <span><a href="{{ .Permalink }}">{{ .Title }}</a></span>
+    <span><em>{{ .Date.Format "January 2 (2006)" }}</em></span>
+  </div>
+  {{ end }}
+  {{ end }}
+  {{ end }}
+</div>

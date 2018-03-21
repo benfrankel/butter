@@ -104,11 +104,9 @@
     transition: all .2s;
 }
 
-.markdown pre:hover,
-.markdown pre:active {
-    max-width: 105%;
-    margin-left: -2.5%;
-    margin-right: -2.5%;
+.markdown pre:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.24);
+    background-color: #fcfcfc;
 }
 
 /* Inline code as a link */
@@ -174,10 +172,12 @@
     font-weight: 700;
 }
 
-/* Invisible horizontal rule */
+/* Simple horizontal rule */
 .markdown hr {
-    margin: 1.5rem 0;
-    visibility: hidden;
+    margin: 2rem 0;
+    height: 1px;
+    border: none;
+    background-color: #eaeaea;
 }
 
 /* Abbreviations */
@@ -239,35 +239,62 @@
 }
 
 /* Footnote section */
-.markdown .footnotes {
-    color: {{ .Site.Params.Color.Footnote | default "#666" }};
+.markdown .footnotes,
+.markdown .foot {
+    color: {{ .Site.Params.Color.FootnoteList | default "#666" }};
     font-size: 90%;
 }
 
 /* Footnote section header */
-.markdown .footnotes ol:before {
-    content: "Footnotes...";
+.markdown .footnotes ol:before,
+.markdown .foot:before {
     font-weight: 700;
     font-size: 120%;
+    content: attr(data-title);
+    display: block;
+}
+
+.markdown .footnotes ol:before {
+    content: "Footnotes...";
 }
 
 /* Footnote list */
-.markdown .footnotes ol {
+.markdown .footnotes ol,
+.markdown .foot ol {
     list-style-type: decimal;
     margin-left: 0;
 }
 
 /* Footnote list item */
-.markdown .footnotes li {
+.markdown .footnotes li,
+.markdown .foot li {
     margin-left: 2em;
 }
 
 /* Footnote reference */
 .markdown .footnote-ref {
-    font-size: .85em;
+    font-size: .8em;
 }
 
 /* Footnote subscript */
 .markdown .footnote-ref > a {
     text-decoration: underline;
+    font-weight: 700;
+    color: {{ .Site.Params.Color.FootnoteLink | default "dodgerblue" }};
+}
+
+/* Footnote return link */
+.markdown .footnote-return {
+    font-size: 0;
+    font-weight: 700;
+    color: {{ .Site.Params.Color.FootnoteLink | default "dodgerblue" }};
+}
+
+.markdown .footnote-return:before {
+    content: "↩";
+    font-size: 1rem;
+    text-decoration: underline;
+    transform: scale(1.3, 1);
+    margin-left: .3rem;
+    display: inline-block;
 }

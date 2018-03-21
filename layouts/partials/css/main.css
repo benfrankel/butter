@@ -5,4 +5,5 @@
 {{ partial "css/fonts.css" . }}
 {{ partial "css/typography.css" . }}
 {{ partial "css/markdown.css" . }}
+{{ partial "css/markdown-extras.css" . }}
 {{ partial "css/highlight.css" . }}

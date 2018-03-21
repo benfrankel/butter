@@ -1,0 +1,29 @@
+.click-reveal,
+.hover-reveal {
+    display: inline-block;
+}
+
+.click-reveal,
+.click-reveal *,
+.hover-reveal,
+.hover-reveal * {
+    cursor: pointer;
+    font-size: 0 !important;
+    visibility: hidden !important;
+}
+
+.click-reveal:before,
+.hover-reveal:before {
+    content: attr(data-label);
+    text-decoration: underline;
+    font-size: 1rem !important;
+    visibility: visible !important;
+}
+
+.click-reveal:active,
+.click-reveal:active *,
+.hover-reveal:hover,
+.hover-reveal:hover * {
+    font-size: 1rem !important;
+    visibility: visible !important;
+}
