@@ -1,45 +1,39 @@
-.click-reveal,
-.hover-reveal {
-    display: inline-block;
-}
-
-.click-reveal,
-.click-reveal *,
-.hover-reveal,
-.hover-reveal * {
-    cursor: pointer;
-    font-size: 0 !important;
-    visibility: hidden !important;
-}
-
 .click-reveal:before,
 .hover-reveal:before {
     content: attr(data-label);
     text-decoration: underline;
-    font-size: 1rem !important;
-    visibility: visible !important;
 }
 
-.click-reveal:active,
-.click-reveal:active *,
-.hover-reveal:hover,
-.hover-reveal:hover * {
-    font-size: 1rem !important;
-    visibility: visible !important;
+.click-reveal,
+.hover-reveal {
+    cursor: pointer;
+}
+
+.click-reveal > *,
+.hover-reveal > * {
+    display: none !important;
+}
+
+.click-reveal:active > *,
+.hover-reveal:hover > * {
+    display: inline-block !important;
 }
 
 .click-reveal-region,
 .hover-reveal-region {
     width: 100%;
     background-color: #e0f8f8;
-    color: #e0f8f8;
-    transition: .3s all;
     margin: 1rem 0;
     padding: 1rem;
     cursor: pointer;
 }
 
-.click-reveal-region:active,
-.hover-reveal-region:hover {
-    color: inherit;
+.click-reveal-region > *,
+.hover-reveal-region > * {
+    visibility: hidden !important;
+}
+
+.click-reveal-region:active > *,
+.hover-reveal-region:hover > * {
+    visibility: visible !important;
 }
