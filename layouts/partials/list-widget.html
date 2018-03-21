@@ -7,7 +7,7 @@
 
 <div id="page-list-groups">
   {{ range .Keys }}
-  {{ dict "Groups" (index $.Groupings .) "Pages" $.Pages | partial "list-by-grouping.html" }}
+  {{ dict "Groups" (index $.Groupings .) "Pages" $.Pages | partial "list-by-groups.html" }}
   {{ end }}
 </div>
 

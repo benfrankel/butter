@@ -1,0 +1,15 @@
+<div>
+  {{ range $key, $taxonomy := .Groups }}
+  {{ if in $key "" }}
+  {{ with (intersect $taxonomy.Pages $.Pages).ByDate.Reverse }}
+  <h4>{{ $key | humanize | title }}</h4>
+  {{ partial "list-group.html" . }}
+  {{ end }}
+  {{ else }}
+  {{ with (intersect $taxonomy.Pages $.Pages).ByDate.Reverse }}
+  <h4>{{ $taxonomy.Key }}</h4>
+  {{ partial "list-group.html" . }}
+  {{ end }}
+  {{ end }}
+  {{ end }}
+</div>

@@ -1,0 +1,6 @@
+{{ range . }}
+<div class="columns-split">
+  <span><a href="{{ .Permalink }}">{{ .Title }}</a></span>
+  <span><em>{{ .Date.Format "January 2 (2006)" }}</em></span>
+</div>
+{{ end }}
