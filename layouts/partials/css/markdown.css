@@ -13,6 +13,10 @@
     margin-bottom: 1em;
 }
 
+.markdown p:last-child {
+    margin-bottom: 0;
+}
+
 /* Don't justify paragraphs on small screens */
 @media (max-width: 800px) {
     .markdown p {

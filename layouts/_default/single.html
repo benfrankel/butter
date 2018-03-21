@@ -1,8 +1,9 @@
 {{ partial "html-begin.html" . }}
 <article class="markdown">
   <header>
-    <h1 class="zero-margin-top">{{ partial "page-title.html" . }}</h1>
+    <h1>{{ partial "page-title.html" . }}</h1>
   </header>
+  
   {{ .Content }}
 </article>
 {{ partial "html-end.html" . }}

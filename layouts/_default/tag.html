@@ -1,12 +1,9 @@
 {{ partial "list-begin.html" . }}
 
 <h2>Most Recent</h2>
-{{ partial "list-group.html" .Data.Pages }}
+{{ partial "list-group.html" .Data.Pages.ByDate.Reverse }}
 
 <hr>
-<div class="columns-split">
-  <em><a href="/tags/">See more tags...</a></em>
-  <em><a></a></em>
-</div>
+<em><a href="/tags/">See more tags...</a></em>
 
 {{ partial "list-end.html" . }}
