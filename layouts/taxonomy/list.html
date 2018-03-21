@@ -1,6 +1,6 @@
 {{ partial "list-begin.html" . }}
 
-{{ $y := .Data.Pages.GroupByDate "Year" }}
+{{ $y := .Data.Pages.GroupByDate "2006" }}
 {{ $c := .Site.Taxonomies.categories }}
 {{ $t := .Site.Taxonomies.tags }}
 
