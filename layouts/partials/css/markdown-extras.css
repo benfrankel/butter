@@ -5,7 +5,7 @@
 }
 
 .click-reveal,
-.hover-reveal {
+.click-reveal-region {
     cursor: pointer;
 }
 
@@ -25,7 +25,6 @@
     background-color: #e0f8f8;
     margin: 1rem 0;
     padding: 1rem;
-    cursor: pointer;
 }
 
 .click-reveal-region > *,
