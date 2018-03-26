@@ -29,9 +29,12 @@
 /* Inline code */
 .markdown code {
     padding: .15em .5em;
-    border-radius: 4px;
     background-color: {{ .Site.Params.Color.CodeBackground | default "#f8e8ea" }};
-    color: {{ .Site.Params.Color.Code | default "#c25" }}
+    color: {{ .Site.Params.Color.Code | default "#c25" }};
+    {{ if (.Site.Params.Color.CodeShowBorder | default true) }}
+    border-radius: 4px;
+    border: 1px solid {{ .Site.Params.Color.CodeBorder | default "#ecd" }};
+    {{ end }}
 }
 
 /* Code blocks */
@@ -39,21 +42,22 @@
     max-width: 100%;
     margin: 1.5rem 0 2.5rem;
     padding: 1rem;
-    border-radius: 2px;
     overflow-x: auto;
-    {{ if (.Site.Params.Color.CodeShowBorder | default false) }}
-    border-left: 5px solid {{ .Site.Params.Color.CodeBorder | default "#eee" }}
+    {{ if (.Site.Params.Color.CodeBlockShowBorder | default false) }}
+    border-radius: 2px;
+    border-left: 5px solid {{ .Site.Params.Color.CodeBlockBorder | default "#eee" }};
     {{ end }}
 }
 
 .markdown pre,
 .markdown pre code {
     background-color: {{ .Site.Params.Color.CodeBlockBackground | default "#fafafa" }};
-    color: {{ .Site.Params.Color.CodeBlock | default "inherit" }}
+    color: {{ .Site.Params.Color.CodeBlock | default "inherit" }};
 }
 
 .markdown pre code {
     padding: 0;
+    border: none;
     border-radius: 0;
 }
 

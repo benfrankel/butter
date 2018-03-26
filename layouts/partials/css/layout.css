@@ -1,5 +1,5 @@
 html {
-    background-color: {{ .Site.Params.Color.Background | default "#ffffff" }};
+    background-color: {{ .Site.Params.Color.Background | default "#fff" }};
     height: auto;
     min-height: 100%;
 }

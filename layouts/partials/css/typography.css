@@ -3,7 +3,7 @@ body {
     text-rendering: optimizeLegibility !important;
     font-size: 20px;
     font-weight: 300;
-    color: {{ .Site.Params.Color.Foreground | default "#202050" }};
+    color: {{ .Site.Params.Color.Default | default "#202050" }};
 }
 
 /* Adjust font size for screen size */
