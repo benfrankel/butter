@@ -30,6 +30,47 @@ body {
     }
 }
 
+/* Meta information about a page, underneath the page title */
+.meta-box {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: -.5em 0 2em;
+}
+
+.meta-box ul {
+    list-style-type: none !important;
+    margin: 0 !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.meta-box ul.tags:before {
+    content: "Tags:";
+    margin-right: .75ex;
+}
+
+.meta-box ul li {
+    margin: 0 .75ex 0 0 !important;
+}
+
+.meta-box ul.tags li:after {
+    content: ",";
+    margin-left: -.4ex;
+}
+
+.meta-box ul.categories li:after {
+    content: "&";
+    margin-left: .1ex;
+}
+
+.meta-box ul li:last-child:after {
+    content: "";
+    margin: 0;
+}
+
 /* Layout utility classes */
 
 .center {
