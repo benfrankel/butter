@@ -19,7 +19,7 @@ body {
     box-sizing: border-box;
     margin: 0 auto;
     padding: 0 5%;
-    max-width: calc(850px + 10%);
+    max-width: calc(840px + 10%);
     width: 100%;
 }
 

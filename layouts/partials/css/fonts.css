@@ -15,8 +15,12 @@ body {
     font-family: {{ .Site.Params.Fonts.Title | default "sans-serif" }};
 }
 
+/* Navigation */
+#site-nav {
+    font-family: {{ .Site.Params.Fonts.Navigation | default "serif" }};
+}
+
 /* Header */
-#site-header,
 h1,
 h2,
 h3,
