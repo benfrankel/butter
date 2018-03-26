@@ -30,7 +30,7 @@
 .markdown code {
     padding: .15em .5em;
     background-color: {{ .Site.Params.Color.CodeBackground | default "#f8e8ea" }};
-    color: {{ .Site.Params.Color.Code | default "#c25" }};
+    color: {{ .Site.Params.Color.Code | default "#b24" }};
     {{ if (.Site.Params.Color.CodeShowBorder | default true) }}
     border-radius: 4px;
     border: 1px solid {{ .Site.Params.Color.CodeBorder | default "#ecd" }};
@@ -43,9 +43,9 @@
     margin: 1.5rem 0 2.5rem;
     padding: 1rem;
     overflow-x: auto;
-    {{ if (.Site.Params.Color.CodeBlockShowBorder | default false) }}
-    border-radius: 2px;
-    border-left: 5px solid {{ .Site.Params.Color.CodeBlockBorder | default "#eee" }};
+    {{ if (.Site.Params.Color.CodeBlockShowBorder | default true) }}
+    border-radius: 4px;
+    border: 1px solid {{ .Site.Params.Color.CodeBlockBorder | default "#eee" }};
     {{ end }}
 }
 
@@ -146,14 +146,14 @@
 
 /* Blockquotes */
 .markdown blockquote {
-    padding: 1rem .5rem 1rem 1.25rem;
-    margin: .8rem 0 .8rem 1rem;
-    color: {{ .Site.Params.Color.Quote | default "#787886" }};
-    font-size: 110%;
+    padding: 1rem 1.33rem;
+    margin: 1rem 0 1rem 1rem;
+    color: {{ .Site.Params.Color.Quote | default "#585866" }};
+    font-size: 105%;
     font-style: italic;
-    background-color: {{ .Site.Params.Color.QuoteBackground | default "#ffb" }};
+    background-color: {{ .Site.Params.Color.QuoteBackground | default "#fefeb4" }};
     {{ if (.Site.Params.Color.QuoteShowBorder | default true) }}
-    border-left: 5px solid {{ .Site.Params.Color.QuoteBorder | default "#fafaaf" }};
+    border-left: .33em solid {{ .Site.Params.Color.QuoteBorder | default "#f8f8a4" }};
     {{ end }}
 }
 
