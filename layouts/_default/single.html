@@ -2,6 +2,36 @@
 <article class="markdown">
   <header>
     <h1>{{ partial "page-title.html" . }}</h1>
+    
+    <div class="meta">
+      <div>
+        <span>{{ .Date.Format .Site.Params.DateForm }}</span>
+        <br>
+        <span>{{ .ReadingTime }} minute read</span>
+      </div>
+      
+      <div>
+        {{ with .Params.Categories }}
+        <ul class="categories">
+          {{ range . }}
+          <li>
+            <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+          </li>
+          {{ end }}
+        </ul>
+        {{ end }}
+        
+        {{ with .Params.Tags }}
+        <ul class="tags">
+          {{ range . }}
+          <li>
+            <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+          </li>
+          {{ end }}
+        </ul>
+        {{ end }}
+      </div>
+    </div>
   </header>
   
   {{ .Content }}
