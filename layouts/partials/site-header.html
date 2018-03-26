@@ -5,7 +5,7 @@
   
   <nav id="site-nav">
     {{ range .Site.Params.Navigation }}
-    <a href="{{ $.Site.BaseURL }}{{ index . 1 }}/">{{ index . 0 }}</a>
+    <a href="{{ $.Site.BaseURL }}{{ index . 1 }}">{{ index . 0 }}</a>
     {{ end }}
   </nav>
 </header>
