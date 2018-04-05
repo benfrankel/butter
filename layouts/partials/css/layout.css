@@ -74,10 +74,10 @@ body {
 /* Layout utility classes */
 
 .center {
-    text-align: center;
+    text-align: center !important;
 }
 
-.zero-margin-top {
+.immediate {
     margin-top: 0 !important;
 }
 
@@ -86,34 +86,33 @@ body {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: stretch;
+}
+
+.columns > :last-child,
+.columns-split > :last-child {
+    margin-right: 0;
 }
 
 .columns > *,
 .columns-split > * {
-    flex: 1;
     margin-left: .5em;
     margin-right: .5em;
 }
 
-.columns > *:first-child,
-.columns-split > *:first-child {
+.columns > :first-child,
+.columns-split > :first-child {
     margin-left: 0;
 }
 
-.columns > *:last-child,
-.columns-split > *:last-child {
-    margin-right: 0;
+.columns-split > :last-child {
+    text-align: right;
 }
 
 .columns-split > * {
     text-align: center;
 }
 
-.columns-split > *:first-child {
+.columns-split > :first-child {
     text-align: left;
-}
-
-.columns-split > *:last-child {
-    text-align: right;
 }

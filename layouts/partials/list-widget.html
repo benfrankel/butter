@@ -1,5 +1,5 @@
 {{ if .Pages }}
-<h2 class="zero-margin-top"
+<h2 class="immediate"
                style="width: 100%;">
   Group by: <a href="#"
                id="page-list-groupby"
@@ -12,6 +12,8 @@
   {{ dict "Groups" (index $.Groupings .) "Pages" $.Pages | partial "list-by-groups.html" }}
   {{ end }}
 </div>
+
+<hr>
 
 <script defer>
   var group = (function() {

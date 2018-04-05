@@ -1,9 +1,13 @@
 {{ partial "list-begin.html" . }}
 
-<h2>Most Recent</h2>
+<h2 class="immediate">Most Recent</h2>
 {{ partial "list-group.html" .Data.Pages.ByDate.Reverse }}
 
 <hr>
-<em><a href="/categories/">See more categories...</a></em>
+
+<div class="meta-box meta">
+  <a href="/categories/">Other categories...</a>
+  <a href="/tags/">...or tags</a>
+</div>
 
 {{ partial "list-end.html" . }}

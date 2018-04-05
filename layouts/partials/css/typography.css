@@ -72,7 +72,7 @@ h6 {
     font-weight: 700;
     color: {{ .Site.Params.Color.Header | default "#302a48" }};
     margin: 1em 0 .5em;
-    line-height: 1.25;
+    line-height: 1.2;
 }
 
 h1:first-child,
@@ -109,6 +109,31 @@ h5 {
 
 h6 {
     font-size: 100%;
+}
+
+/* Center headers on small screens */
+/* Soften header size contrast on small screens */
+@media (max-width: 480px) {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 275%;
+    }
+
+    h2 {
+        font-size: 215%;
+    }
+
+    h3 {
+        font-size: 170%;
+    }
 }
 
 .meta {

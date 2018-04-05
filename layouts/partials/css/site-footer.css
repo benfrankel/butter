@@ -5,14 +5,12 @@
     justify-content: space-evenly;
     align-items: center;
     padding: 1.5em 0;
-    margin-top: 4em;
+    margin-top: 6em;
     font-style: italic;
-    font-size: 85%;
+    font-size: 80%;
     line-height: 1.5;
-    border-width: 1px 0 0 0;
-    border-style: solid;
-    border-image: linear-gradient(to right, rgba(0, 0, 0, .1), rgba(0, 0, 0, .2), rgba(0, 0, 0, .1)) 1;
-    background-color: {{ .Site.Params.Color.RegionBackground | default "#fafafa" }};
+    border-top: 1px solid {{ .Site.Params.Color.RegionBorder | default "#ddd" }};
+    background-color: {{ .Site.Params.Color.RegionBackground | default "#f5f5f7" }};
     width: 100%;
 }
 
@@ -25,16 +23,16 @@
 
 /* Icon color and spacing */
 #site-contact-icons > a {
-    fill: {{ .Site.Params.Color.Icon | default "#889" }};
-    margin: 0 5px;
+    fill: {{ .Site.Params.Color.Icon | default "#89a" }};
+    margin: 0 .33em;
 }
 
 /* Hovered icon color */
 #site-contact-icons > a:hover {
-    fill: {{ .Site.Params.Color.IconHover | default "#449" }};
+    fill: {{ .Site.Params.Color.IconHover | default "#47c" }};
 }
 
 /* Set icons to same height */
 #site-contact-icons svg {
-    height: 1.1em;
+    height: 1.5em;
 }

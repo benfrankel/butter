@@ -1,6 +1,8 @@
 {{ partial "list-begin.html" . }}
 
-<h2>Recently Updated</h2>
+<h2 class="immediate">Recently Updated</h2>
 {{ partial "list-group.html" .Data.Pages.ByDate.Reverse }}
+
+<hr>
 
 {{ partial "list-end.html" . }}

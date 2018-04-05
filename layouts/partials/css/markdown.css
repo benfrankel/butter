@@ -24,16 +24,17 @@
 .markdown pre {
     font-size: .93em;
     line-height: 1.2;
+    white-space: pre;
 }
 
 /* Inline code */
 .markdown code {
     padding: .15em .5em;
-    background-color: {{ .Site.Params.Color.CodeBackground | default "#f8e8ea" }};
-    color: {{ .Site.Params.Color.Code | default "#b24" }};
+    background-color: {{ .Site.Params.Color.CodeBackground | default "#f5f5f7" }};
+    color: {{ .Site.Params.Color.Code | default "inherit" }};
     {{ if (.Site.Params.Color.CodeShowBorder | default true) }}
     border-radius: 4px;
-    border: 1px solid {{ .Site.Params.Color.CodeBorder | default "#ecd" }};
+    border: 1px solid {{ .Site.Params.Color.CodeBorder | default "#ddd" }};
     {{ end }}
 }
 
@@ -45,13 +46,13 @@
     overflow-x: auto;
     {{ if (.Site.Params.Color.CodeBlockShowBorder | default true) }}
     border-radius: 4px;
-    border: 1px solid {{ .Site.Params.Color.CodeBlockBorder | default "#eee" }};
+    border: 1px solid {{ .Site.Params.Color.CodeBlockBorder | default "#ddd" }};
     {{ end }}
 }
 
 .markdown pre,
 .markdown pre code {
-    background-color: {{ .Site.Params.Color.CodeBlockBackground | default "#fafafa" }};
+    background-color: {{ .Site.Params.Color.CodeBlockBackground | default "#f5f5f7" }};
     color: {{ .Site.Params.Color.CodeBlock | default "inherit" }};
 }
 
@@ -106,12 +107,12 @@
 .markdown li ul,
 .markdown li ol,
 .markdown li dl {
-    margin: .15rem 0 .15rem .25rem;
+    margin: 0;
 }
 
 /* List items */
 .markdown li {
-    margin-left: 1.5em;
+    margin: .35rem 0 .35rem 2.5rem;
 }
 
 /* Emphasized text */
@@ -151,9 +152,9 @@
     color: {{ .Site.Params.Color.Quote | default "#585866" }};
     font-size: 105%;
     font-style: italic;
-    background-color: {{ .Site.Params.Color.QuoteBackground | default "#fefeb4" }};
+    background-color: {{ .Site.Params.Color.QuoteBackground | default "#fff" }};
     {{ if (.Site.Params.Color.QuoteShowBorder | default true) }}
-    border-left: .33em solid {{ .Site.Params.Color.QuoteBorder | default "#f8f8a4" }};
+    border-left: .33em solid {{ .Site.Params.Color.QuoteBorder | default "#c4e4f8" }};
     {{ end }}
 }
 
@@ -189,7 +190,7 @@
 
 .markdown tbody tr:nth-child(odd) td,
 .markdown tbody tr:nth-child(odd) th {
-    background-color: #fafafa;
+    background-color: #f2f2f6;
 }
 
 /* Footnote section */
@@ -225,23 +226,22 @@
     margin-left: 2em;
 }
 
-/* Footnote reference */
-.markdown .footnote-ref {
+/* Superscript & subscript */
+.markdown sup,
+.markdown sub {
     font-size: .8em;
 }
 
-/* Footnote subscript */
+/* Footnote superscript */
 .markdown .footnote-ref > a {
     text-decoration: underline;
     font-weight: 700;
-    color: {{ .Site.Params.Color.FootnoteLink | default "dodgerblue" }};
 }
 
 /* Footnote return link */
 .markdown .footnote-return {
     font-size: 0;
     font-weight: 700;
-    color: {{ .Site.Params.Color.FootnoteLink | default "dodgerblue" }};
 }
 
 .markdown .footnote-return:before {
