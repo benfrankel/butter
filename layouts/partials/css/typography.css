@@ -71,7 +71,7 @@ h5,
 h6 {
     font-weight: 700;
     color: {{ .Site.Params.Color.Header | default "#302a48" }};
-    margin: 1em 0 .5em;
+    margin: .75em 0;
     line-height: 1.2;
 }
 

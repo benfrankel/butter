@@ -234,8 +234,16 @@
 
 /* Footnote superscript */
 .markdown .footnote-ref > a {
-    text-decoration: underline;
     font-weight: 700;
+}
+
+.markdown .footnote-ref > a:before {
+    margin-left: 1px;
+    content: "[";
+}
+
+.markdown .footnote-ref > a:after {
+    content: "]";
 }
 
 /* Footnote return link */
