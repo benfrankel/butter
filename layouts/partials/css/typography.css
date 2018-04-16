@@ -1,7 +1,7 @@
 body {
     line-height: 1.5;
     text-rendering: optimizeLegibility !important;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 300;
     color: {{ .Site.Params.Color.Default | default "#334" }};
 }
@@ -10,13 +10,7 @@ p {
     word-spacing: 1px;
 }
 
-/* Adjust font size for screen size */
-@media (max-width: 64em) {
-    body {
-        font-size: 18px;
-    }
-}
-
+/* Adjust font size with screen size */
 @media (max-width: 48em) {
     body {
         font-size: 16px;
@@ -29,10 +23,9 @@ p {
     }
 }
 
-/* Larger text on very wide screens */
-@media (min-width: 2400px) {
+@media (min-width: 128em) {
     body {
-        font-size: 22px;
+        font-size: 20px;
     }
 }
 
