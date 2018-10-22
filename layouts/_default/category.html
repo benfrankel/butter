@@ -1,7 +1,8 @@
 {{ partial "list-begin.html" . }}
 
 <h2 class="immediate">Most Recent</h2>
-{{ partial "list-group.html" .Data.Pages.ByDate.Reverse }}
+{{ $pages := where .Pages "Params.post" true }}
+{{ partial "list-group.html"  $pages.ByDate.Reverse }}
 
 <hr>
 

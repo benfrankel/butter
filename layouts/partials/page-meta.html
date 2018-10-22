@@ -1,9 +1,17 @@
+{{ if or (.Params.ShowTime | default true) (.Params.ShowTaxonomy | default true) }}
 <div class="meta-box meta">
+
+  {{ if (.Params.ShowTime | default true) }}
+  
   <div>
     <span>{{ .Date.Format .Site.Params.DateForm }}</span>
     <br>
     <span>{{ .ReadingTime }} minute read</span>
   </div>
+
+  {{ end }}
+
+  {{ if (.Params.ShowTaxonomy | default true) }}
   
   <div>
     {{ with .Params.Categories }}
@@ -14,6 +22,8 @@
       </li>
       {{ end }}
     </ul>
+    {{ else }}
+    <div>... not categorized</div>
     {{ end }}
     
     {{ with .Params.Tags }}
@@ -24,6 +34,12 @@
       </li>
       {{ end }}
     </ul>
+    {{ else }}
+    <div>... not tagged</div>
     {{ end }}
   </div>
+  
+  {{ end }}
+  
 </div>
+{{ end }}

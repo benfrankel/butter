@@ -1,13 +1,13 @@
 {{ partial "list-begin.html" . }}
 
-{{ $y := .Data.Pages.GroupByDate "2006" }}
+{{ $y := .Pages.GroupByDate "2006" }}
 {{ $c := .Site.Taxonomies.categories }}
 {{ $t := .Site.Taxonomies.tags }}
 
 {{ $groupings := dict "Year" $y "Category" $c "Tag" $t }}
 {{ $keys := split "Year,Category,Tag" "," }}
 
-{{ $pages := .Data.Pages }}
+{{ $pages := where .Pages "Params.post" true }}
 
 {{ $args := dict "Groupings" $groupings "Pages" $pages "Keys" $keys }}
 {{ partial "list-widget.html" $args }}

@@ -39,12 +39,15 @@ body {
     margin: -.5em 0 2em;
 }
 
+.meta-box :first-child ~ :last-child {
+    text-align: right;
+}
+
 .meta-box ul {
     list-style-type: none !important;
     margin: 0 !important;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
 }
 
 .meta-box ul.tags:before {
@@ -54,6 +57,10 @@ body {
 
 .meta-box ul li {
     margin: 0 .75ex 0 0 !important;
+}
+
+.meta-box ul li:last-child {
+    margin: 0 !important;
 }
 
 .meta-box ul.tags li:after {

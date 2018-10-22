@@ -1,10 +1,6 @@
 {{ if .Pages }}
-<h2 class="immediate"
-               style="width: 100%;">
-  Group by: <a href="#"
-               id="page-list-groupby"
-               style="width: 100%;"
-               onclick="return group.next();"></a>
+<h2 class="immediate">
+  <a href="#" onclick="return group.next();" style="text-decoration: none !important;">Group by</a>: <span id="page-list-groupby"></span>
 </h2>
 
 <div id="page-list-groups">
@@ -13,7 +9,6 @@
   {{ end }}
 </div>
 
-<hr>
 
 <script defer>
   var group = (function() {

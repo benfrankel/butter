@@ -104,6 +104,11 @@
     margin-bottom: 1.25rem;
 }
 
+/* Ordered list items */
+.markdown ol > li {
+    text-indent: .2rem;
+}
+
 /* Nested lists */
 .markdown li ul,
 .markdown li ol,
@@ -165,14 +170,26 @@
 
 /* Images */
 .markdown img {
-    max-width: 100%;
-    transition: all .2s;
+    transition: all .12s;
 }
 
+/* Image interactivity */
 .markdown img:active,
 .markdown img:focus {
-    max-width: 111%;
-    margin-left: -5.5%;
+    margin-top: -8px;
+    margin-bottom: 8px;
+    filter: drop-shadow(0px 8px 5px gray) contrast(105%);
+}
+
+/* Figures */
+.markdown figure {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1em -.4em;
+}
+
+.markdown figure > * {
+    padding: .4em;
 }
 
 /* Tables */
