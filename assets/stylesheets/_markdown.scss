@@ -28,9 +28,9 @@
     /* Inline code */
     code {
         padding: 0.15em 0.5em;
-        background-color: $color-code-bg;
-        color: $color-code-fg;
-        border: $code-border-width solid $color-code-border;
+        background-color: $code-bg-color;
+        color: $code-fg-color;
+        border: $code-border-width solid $code-border-color;
     }
 
     /* Code blocks */
@@ -39,13 +39,13 @@
         margin: 1.5rem 0 2.5rem;
         padding: 1rem;
         overflow-x: auto;
-        border: $code-block-border-width solid $color-code-block-border;
+        border: $code-block-border-width solid $code-block-border-color;
     }
 
     pre,
     pre code {
-        background-color: $color-code-block-bg;
-        color: $color-code-block-fg;
+        background-color: $code-block-bg-color;
+        color: $code-block-fg-color;
     }
 
     pre code {
@@ -56,7 +56,7 @@
 
     /* Inline code as a link */
     a code {
-        color: $color-code-link-fg;
+        color: $code-link-fg-color;
     }
 
     /* Inline code as a hovered link */
@@ -127,7 +127,7 @@
         margin: 2rem 0;
         height: 1px;
         border: none;
-        background-color: $color-separator;
+        background-color: $default-border-color;
     }
 
     /* Abbreviations */
@@ -146,11 +146,11 @@
     blockquote {
         padding: 1rem 1.33rem;
         margin: 1rem 0 1rem 1rem;
-        color: $color-quote-fg;
+        color: $quote-fg-color;
         font-size: 105%;
         font-style: italic;
-        background-color: $color-quote-bg;
-        border-left: $quote-border-width solid $color-quote-border;
+        background-color: $quote-bg-color;
+        border-left: $quote-border-width solid $quote-border-color;
 
         p:last-child {
             margin-bottom: 0;
@@ -212,7 +212,7 @@
     /* Footnote section */
     .footnotes,
     .foot {
-        color: $color-meta-fg;
+        color: $meta-fg-color;
         font-size: 90%;
     }
 

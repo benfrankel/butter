@@ -3,7 +3,7 @@ body {
     text-rendering: optimizeLegibility !important;
     font-size: 18px;
     font-weight: 300;
-    color: $color-default-fg;
+    color: $default-fg-color;
 }
 
 p {
@@ -36,7 +36,7 @@ a {
 
 /* Link */
 a {
-    color: $color-link-fg;
+    color: $link-fg-color;
     text-decoration: none;
     outline: none;
     cursor: pointer;
@@ -56,7 +56,7 @@ a:focus {
 /* Hovered, but not focused link */
 a:hover,
 a:active {
-    color: $color-link-hover-fg;
+    color: $link-hover-fg-color;
 }
 
 /* Headers */
@@ -67,7 +67,7 @@ h4,
 h5,
 h6 {
     font-weight: 700;
-    color: $color-header-fg;
+    color: $header-fg-color;
     margin: 0.75em 0;
     line-height: 1.2;
 }
@@ -140,7 +140,7 @@ h6 {
 .meta {
     font-style: italic;
     font-size: 92%;
-    color: $color-meta-fg;
+    color: $meta-fg-color;
 }
 
 .inline-list {

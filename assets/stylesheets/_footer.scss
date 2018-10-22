@@ -9,8 +9,8 @@
     font-style: italic;
     font-size: 80%;
     line-height: 1.5;
-    border-top: 1px solid $color-region-border;
-    background-color: $color-region-bg;
+    border-top: 1px solid $region-border-color;
+    background-color: $region-bg-color;
     width: 100%;
 }
 
@@ -23,13 +23,13 @@
 
 /* Icon color and spacing */
 #site-contact-icons > a {
-    fill: $color-icon-fg;
+    fill: $icon-fg-color;
     margin: 0 0.33em;
 }
 
 /* Hovered icon color */
 #site-contact-icons > a:hover {
-    fill: $color-icon-hover-fg;
+    fill: $icon-hover-fg-color;
 }
 
 /* Set icons to same height */
