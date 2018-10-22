@@ -1,5 +1,5 @@
 html {
-    background-color: {{ .Site.Params.Color.Background | default "#fff" }};
+    background-color: $color-default-bg;
     height: auto;
     min-height: 100%;
 }

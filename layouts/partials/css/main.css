@@ -1,9 +1,0 @@
-{{ partial "css/reset.min.css" . }}
-{{ partial "css/layout.css" . }}
-{{ partial "css/site-header.css" . }}
-{{ partial "css/site-footer.css" . }}
-{{ partial "css/fonts.css" . }}
-{{ partial "css/typography.css" . }}
-{{ partial "css/markdown.css" . }}
-{{ partial "css/markdown-extras.css" . }}
-{{ partial "css/highlight.css" . }}

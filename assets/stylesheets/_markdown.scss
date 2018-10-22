@@ -1,0 +1,279 @@
+.markdown {
+    /* Paragraphs */
+    p {
+        text-align: $paragraph-align;
+        margin-bottom: 1em;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Don't justify paragraphs on small screens */
+    @media (max-width: 800px) {
+        p {
+            text-align: left;
+        }
+    }
+
+    /* Code */
+    code,
+    pre {
+        font-size: 0.93em;
+        font-weight: 400;
+        line-height: 1.2;
+        white-space: pre;
+    }
+
+    /* Inline code */
+    code {
+        padding: 0.15em 0.5em;
+        background-color: $color-code-bg;
+        color: $color-code-fg;
+        border: $code-border-width solid $color-code-border;
+    }
+
+    /* Code blocks */
+    pre {
+        max-width: 100%;
+        margin: 1.5rem 0 2.5rem;
+        padding: 1rem;
+        overflow-x: auto;
+        border: $code-block-border-width solid $color-code-block-border;
+    }
+
+    pre,
+    pre code {
+        background-color: $color-code-block-bg;
+        color: $color-code-block-fg;
+    }
+
+    pre code {
+        padding: 0;
+        border: none;
+        border-radius: 0;
+    }
+
+    /* Inline code as a link */
+    a code {
+        color: $color-code-link-fg;
+    }
+
+    /* Inline code as a hovered link */
+    a code:hover {
+        text-decoration: underline;
+    }
+
+    /* Lists */
+    ul,
+    ol,
+    dl {
+        padding: 0;
+        margin-left: 0.5rem;
+    }
+
+    /* Definition list labels */
+    dt {
+        font-weight: bold;
+    }
+
+    /* Definition list definitions */
+    dd {
+        margin-bottom: 0.5rem;
+    }
+
+    /* Unordered lists */
+    ul {
+        list-style-type: disc;
+        list-style-position: outside;
+        margin-bottom: 1.25rem;
+    }
+
+    /* Ordered lists */
+    ol {
+        list-style-type: decimal;
+        margin-bottom: 1.25rem;
+    }
+
+    /* Ordered list items */
+    ol > li {
+        text-indent: 0.2rem;
+    }
+
+    /* List items */
+    li {
+        margin: 0.35rem 0 0.35rem 2.5rem;
+
+        /* Nested lists */
+        ul,
+        ol,
+        dl {
+            margin: 0;
+        }
+    }
+
+    /* Emphasized text */
+    em {
+        font-style: italic;
+    }
+
+    /* Strong text */
+    strong {
+        font-weight: 700;
+    }
+
+    /* Simple horizontal rule */
+    hr {
+        margin: 2rem 0;
+        height: 1px;
+        border: none;
+        background-color: $color-separator;
+    }
+
+    /* Abbreviations */
+    abbr {
+        font-size: 0.85rem;
+        font-weight: bold;
+        color: #666666;
+        text-transform: uppercase;
+    }
+    abbr[title] {
+        cursor: help;
+        border-bottom: 1px dotted #808080;
+    }
+
+    /* Blockquotes */
+    blockquote {
+        padding: 1rem 1.33rem;
+        margin: 1rem 0 1rem 1rem;
+        color: $color-quote-fg;
+        font-size: 105%;
+        font-style: italic;
+        background-color: $color-quote-bg;
+        border-left: $quote-border-width solid $color-quote-border;
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    /* Images */
+    img {
+        transition: all 0.12s;
+    }
+
+    /* Image interactivity */
+    img:active,
+    img:focus {
+        margin-top: -8px;
+        margin-bottom: 8px;
+        filter: drop-shadow(0px 8px 5px gray) contrast(105%);
+    }
+
+    /* Figures */
+    figure {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 1em -.4em;
+    }
+
+    figure > * {
+        padding: 0.4em;
+    }
+
+    /* Tables */
+    table {
+        width: 100%;
+        margin-bottom: 1rem;
+        border: 1px solid #ddd;
+        border-collapse: collapse;
+
+        code {
+            border: none;
+            background-color: inherit;
+        }
+    }
+
+    td,
+    th {
+        padding: 0.25rem 0.5rem;
+        border: 1px solid #ddd;
+    }
+
+    th {
+        font-weight: bold;
+    }
+
+    thead tr td,
+    thead tr th {
+        background-color: #f5f5f7;
+    }
+
+    /* Footnote section */
+    .footnotes,
+    .foot {
+        color: $color-meta-fg;
+        font-size: 90%;
+    }
+
+    /* Footnote section header */
+    .footnotes ol:before,
+    .foot:before {
+        font-weight: 700;
+        font-size: 120%;
+        content: attr(data-title);
+        display: block;
+    }
+
+    .footnotes ol:before {
+        content: "Footnotes...";
+    }
+
+    /* Footnote list */
+    .footnotes ol,
+    .foot ol {
+        list-style-type: decimal;
+        margin-left: 0;
+    }
+
+    /* Footnote list item */
+    .footnotes li,
+    .foot li {
+        margin-left: 2em;
+    }
+
+    /* Superscript & subscript */
+    sup,
+    sub {
+        font-size: 0.8em;
+    }
+
+    /* Footnote superscript */
+    .footnote-ref > a {
+        font-weight: 700;
+    }
+
+    .footnote-ref > a:before {
+        margin-left: 1px;
+        content: "[";
+    }
+
+    .footnote-ref > a:after {
+        content: "]";
+    }
+
+    /* Footnote return link */
+    .footnote-return {
+        font-size: 0;
+        font-weight: 700;
+    }
+
+    .footnote-return:before {
+        content: "↩";
+        font-size: 1rem;
+        text-decoration: underline;
+        transform: scale(1.3, 1);
+        margin-left: 0.3rem;
+        display: inline-block;
+    }
+}

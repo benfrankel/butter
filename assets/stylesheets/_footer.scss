@@ -9,8 +9,8 @@
     font-style: italic;
     font-size: 80%;
     line-height: 1.5;
-    border-top: 1px solid {{ .Site.Params.Color.RegionBorder | default "#ddd" }};
-    background-color: {{ .Site.Params.Color.RegionBackground | default "#f5f5f7" }};
+    border-top: 1px solid $color-region-border;
+    background-color: $color-region-bg;
     width: 100%;
 }
 
@@ -23,13 +23,13 @@
 
 /* Icon color and spacing */
 #site-contact-icons > a {
-    fill: {{ .Site.Params.Color.Icon | default "#89a" }};
+    fill: $color-icon-fg;
     margin: 0 0.33em;
 }
 
 /* Hovered icon color */
 #site-contact-icons > a:hover {
-    fill: {{ .Site.Params.Color.IconHover | default "#47c" }};
+    fill: $color-icon-hover-fg;
 }
 
 /* Set icons to same height */

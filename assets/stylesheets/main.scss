@@ -1,0 +1,65 @@
+@charset 'UTF-8';
+
+// Include web fonts
+{{ range .Site.Params.Fonts.Local }}
+@font-face {
+    font-family: '{{ .name }}';
+    src: url('{{ $.Site.BaseURL }}fonts/{{ .filename }}');
+}
+{{ end }}
+
+// Define fonts
+$font-default: {{ .Site.Params.Fonts.Default | default "serif" }};
+$font-title: {{ .Site.Params.Fonts.Title | default "sans-serif" }};
+$font-nav: {{ .Site.Params.Fonts.Navigation | default "serif" }};
+$font-header: {{ .Site.Params.Fonts.Header | default "serif" }};
+$font-code: {{ .Site.Params.Fonts.Code | default "monospace" }};
+
+// Define colors
+$color-default-fg: {{ .Site.Params.Color.Default | default "#334" }};
+$color-default-bg: {{ .Site.Params.Color.Background | default "#fff" }};
+
+$color-link-fg: {{ .Site.Params.Color.Link | default "#1e90ff" }};
+$color-link-hover-fg: {{ .Site.Params.Color.LinkHover | default "inherit" }};
+
+$color-header-fg: {{ .Site.Params.Color.Header | default "#302a48" }};
+
+$color-meta-fg: {{ .Site.Params.Color.FootnoteList | default "#666" }};
+
+$color-icon-fg: {{ .Site.Params.Color.Icon | default "#89a" }};
+$color-icon-hover-fg: {{ .Site.Params.Color.IconHover | default "#47c" }};
+
+$color-separator: {{ .Site.Params.Color.Separator | default "#e9e9e9" }};
+
+$color-code-fg: {{ .Site.Params.Color.Code | default "inherit" }};
+$color-code-bg: {{ .Site.Params.Color.CodeBackground | default "f5f5f7" }};
+$color-code-border: {{ .Site.Params.Color.CodeBorder | default "#ddd" }};
+$color-code-link-fg: {{ .Site.Params.Color.CodeLink | default "#f5f5f7" }};
+
+$color-code-block-fg: {{ .Site.Params.Color.CodeBlock | default "inherit" }};
+$color-code-block-bg: {{ .Site.Params.Color.CodeBlockBackground | default "#f5f5f7" }};
+$color-code-block-border: {{ .Site.Params.Color.CodeBlockBorder | default "#ddd" }};
+
+$color-quote-fg: {{ .Site.Params.Color.Quote | default "#585866" }};
+$color-quote-bg: {{ .Site.Params.Color.QuoteBackground | default "#fff" }};
+$color-quote-border: {{ .Site.Params.Color.QuoteBorder | default "#c4e4f8" }};
+
+$color-region-bg: {{ .Site.Params.Color.RegionBackground | default "#f5f5f7" }};
+$color-region-border: {{ .Site.Params.Color.RegionBorder | default "#ddd" }};
+
+// Define misc
+$paragraph-align: {{ if .Site.Params.Justify | default false }}justify{{ else }}left{{ end }};
+$quote-border-width: {{ if (.Site.Params.Color.QuoteShowBorder | default true) }}0.33em{{ else }}0{{ end }};
+$code-border-width: {{ if (.Site.Params.Color.CodeShowBorder | default true) }}1px{{ else }}0{{ end }};
+$code-block-border-width: {{ if (.Site.Params.Color.CodeBlockShowBorder | default true) }}1px{{ else }}0{{ end }};
+
+// Import stylesheets
+@import 'reset.min';
+@import 'layout';
+@import 'header';
+@import 'footer';
+@import 'fonts';
+@import 'typography';
+@import 'markdown';
+@import 'markdown-extras';
+@import 'highlight';

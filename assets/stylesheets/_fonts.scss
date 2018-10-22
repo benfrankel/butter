@@ -1,0 +1,31 @@
+/* Default */
+body {
+    font-family: $font-default;
+}
+
+/* Title */
+.title {
+    font-family: $font-title;
+}
+
+/* Navigation */
+#site-nav {
+    font-family: $font-nav;
+}
+
+/* Header */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-header;
+}
+
+/* Code */
+code,
+pre,
+kbd {
+    font-family: $font-code;
+}
