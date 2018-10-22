@@ -24,7 +24,7 @@
 /* Icon color and spacing */
 #site-contact-icons > a {
     fill: {{ .Site.Params.Color.Icon | default "#89a" }};
-    margin: 0 .33em;
+    margin: 0 0.33em;
 }
 
 /* Hovered icon color */

@@ -36,7 +36,7 @@ body {
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-    margin: -.5em 0 2em;
+    margin: -0.5em 0 2em;
 }
 
 .meta-box :first-child ~ :last-child {
@@ -52,11 +52,11 @@ body {
 
 .meta-box ul.tags:before {
     content: "Tags:";
-    margin-right: .75ex;
+    margin-right: 0.75ex;
 }
 
 .meta-box ul li {
-    margin: 0 .75ex 0 0 !important;
+    margin: 0 0.75ex 0 0 !important;
 }
 
 .meta-box ul li:last-child {
@@ -65,12 +65,12 @@ body {
 
 .meta-box ul.tags li:after {
     content: ",";
-    margin-left: -.4ex;
+    margin-left: -0.4ex;
 }
 
 .meta-box ul.categories li:after {
     content: "&";
-    margin-left: .1ex;
+    margin-left: 0.1ex;
 }
 
 .meta-box ul li:last-child:after {
@@ -103,8 +103,8 @@ body {
 
 .columns > *,
 .columns-split > * {
-    margin-left: .5em;
-    margin-right: .5em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
 }
 
 .columns > :first-child,
