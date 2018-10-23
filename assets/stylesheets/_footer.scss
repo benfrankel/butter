@@ -10,7 +10,7 @@
     font-size: 80%;
     line-height: 1.5;
     border-top: 1px solid $region-border-color;
-    background-color: $region-bg-color;
+    background-color: $region-bg;
     width: 100%;
 }
 
@@ -23,13 +23,13 @@
 
 /* Icon color and spacing */
 #site-contact-icons > a {
-    fill: $icon-fg-color;
+    fill: $icon-color;
     margin: 0 0.33em;
 }
 
 /* Hovered icon color */
 #site-contact-icons > a:hover {
-    fill: $icon-hover-fg-color;
+    fill: $icon-hover-color;
 }
 
 /* Set icons to same height */

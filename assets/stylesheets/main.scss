@@ -1,6 +1,9 @@
 @charset 'UTF-8';
 
-// Include web fonts
+///////////////
+// Web fonts //
+///////////////
+
 {{ range .Site.Params.Fonts.Local }}
 @font-face {
     font-family: '{{ .name }}';
@@ -8,51 +11,107 @@
 }
 {{ end }}
 
-// Define fonts
-$default-font: {{ .Site.Params.Fonts.Default | default "serif" }};
+
+///////////////////////
+// General variables //
+///////////////////////
+
+// Grayscale
+$white:    {{ .Site.Params.Color.White   | default "#fff    !default" }};
+$gray-100: {{ .Site.Params.Color.Gray100 | default "#f2f2f5 !default" }};
+$gray-200: {{ .Site.Params.Color.Gray200 | default "#e9ecef !default" }};
+$gray-300: {{ .Site.Params.Color.Gray300 | default "#dee2e6 !default" }};
+$gray-400: {{ .Site.Params.Color.Gray400 | default "#ced4da !default" }};
+$gray-500: {{ .Site.Params.Color.Gray500 | default "#adb5bd !default" }};
+$gray-600: {{ .Site.Params.Color.Gray600 | default "#6c757d !default" }};
+$gray-700: {{ .Site.Params.Color.Gray700 | default "#495057 !default" }};
+$gray-800: {{ .Site.Params.Color.Gray800 | default "#343a40 !default" }};
+$gray-900: {{ .Site.Params.Color.Gray900 | default "#212529 !default" }};
+$black:    {{ .Site.Params.Color.Black   | default "#000    !default" }};
+
+// Hues
+$blue:   #007bff !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink:   #e83e8c !default;
+$red:    #dc3545 !default;
+$orange: #fd7e14 !default;
+$yellow: #ffc107 !default;
+$green:  #28a745 !default;
+$teal:   #20c997 !default;
+$cyan:   #17a9c8 !default;
+
+// Theme colors
+$primary:   {{ .Site.Params.Color.Primary   | default "$white    !default" }};
+$secondary: {{ .Site.Params.Color.Secondary | default "$gray-100 !default" }};
+$boundary:  {{ .Site.Params.Color.Boundary  | default "$gray-400 !default" }};
+$active:    {{ .Site.Params.Color.Active    | default "$cyan     !default" }};
+$inactive:  {{ .Site.Params.Color.Inactive  | default "inherit   !default" }};
+
+
+////////////////////////
+// Specific variables //
+////////////////////////
+
+// Body
+$body-font: {{ .Site.Params.Fonts.Default | default "serif" }};
+$body-color: {{ .Site.Params.Color.Default | default "$gray-800" }};
+$body-bg: {{ .Site.Params.Color.Background | default "$primary" }};
+$body-link-color: {{ .Site.Params.Color.Link | default "$active" }};
+$body-link-hover-color: {{ .Site.Params.Color.LinkHover | default "$inactive" }};
+
+// Title
 $title-font: {{ .Site.Params.Fonts.Title | default "sans-serif" }};
+
+// Nav
 $nav-font: {{ .Site.Params.Fonts.Navigation | default "serif" }};
+
+// Header
 $header-font: {{ .Site.Params.Fonts.Header | default "serif" }};
+$header-color: {{ .Site.Params.Color.Header | default "#302a48" }};
+
+// Code
 $code-font: {{ .Site.Params.Fonts.Code | default "monospace" }};
-
-// Define colors
-$default-fg-color: {{ .Site.Params.Color.Default | default "#334" }};
-$default-bg-color: {{ .Site.Params.Color.Background | default "#fff" }};
-$default-border-color: {{ .Site.Params.Color.Separator | default "#e9e9e9" }};
-
-$link-fg-color: {{ .Site.Params.Color.Link | default "#1e90ff" }};
-$link-hover-fg-color: {{ .Site.Params.Color.LinkHover | default "inherit" }};
-
-$header-fg-color: {{ .Site.Params.Color.Header | default "#302a48" }};
-
-$meta-fg-color: {{ .Site.Params.Color.FootnoteList | default "#666" }};
-
-$icon-fg-color: {{ .Site.Params.Color.Icon | default "#89a" }};
-$icon-hover-fg-color: {{ .Site.Params.Color.IconHover | default "#47c" }};
-
-$code-fg-color: {{ .Site.Params.Color.Code | default "inherit" }};
-$code-bg-color: {{ .Site.Params.Color.CodeBackground | default "f5f5f7" }};
-$code-border-color: {{ .Site.Params.Color.CodeBorder | default "#ddd" }};
-$code-link-fg-color: {{ .Site.Params.Color.CodeLink | default "#f5f5f7" }};
-
-$code-block-fg-color: {{ .Site.Params.Color.CodeBlock | default "inherit" }};
-$code-block-bg-color: {{ .Site.Params.Color.CodeBlockBackground | default "#f5f5f7" }};
-$code-block-border-color: {{ .Site.Params.Color.CodeBlockBorder | default "#ddd" }};
-
-$quote-fg-color: {{ .Site.Params.Color.Quote | default "#585866" }};
-$quote-bg-color: {{ .Site.Params.Color.QuoteBackground | default "#fff" }};
-$quote-border-color: {{ .Site.Params.Color.QuoteBorder | default "#c4e4f8" }};
-
-$region-bg-color: {{ .Site.Params.Color.RegionBackground | default "#f5f5f7" }};
-$region-border-color: {{ .Site.Params.Color.RegionBorder | default "#ddd" }};
-
-// Define misc
-$paragraph-align: {{ if .Site.Params.Justify | default false }}justify{{ else }}left{{ end }};
-$quote-border-width: {{ if (.Site.Params.Color.QuoteShowBorder | default true) }}0.33em{{ else }}0{{ end }};
+$code-color: {{ .Site.Params.Color.Code | default "inherit" }};
+$code-bg: {{ .Site.Params.Color.CodeBackground | default "$secondary" }};
+$code-border-color: {{ .Site.Params.Color.CodeBorder | default "$boundary" }};
 $code-border-width: {{ if (.Site.Params.Color.CodeShowBorder | default true) }}1px{{ else }}0{{ end }};
-$code-block-border-width: {{ if (.Site.Params.Color.CodeBlockShowBorder | default true) }}1px{{ else }}0{{ end }};
+$code-link-color: {{ .Site.Params.Color.CodeLink | default "#f5f5f7" }};
 
-// Import stylesheets
+// Code block
+$pre-color: {{ .Site.Params.Color.CodeBlock | default "inherit" }};
+$pre-bg: {{ .Site.Params.Color.CodeBlockBackground | default "$secondary" }};
+$pre-border-color: {{ .Site.Params.Color.CodeBlockBorder | default "$boundary" }};
+$pre-border-width: {{ if (.Site.Params.Color.CodeBlockShowBorder | default true) }}1px{{ else }}0{{ end }};
+
+// Horizontal rule
+$hr-color: {{ .Site.Params.Color.Separator | default "$boundary" }};
+
+// Meta
+$meta-color: {{ .Site.Params.Color.FootnoteList | default "#666" }};
+
+// Icon
+$icon-color: {{ .Site.Params.Color.Icon | default "#89a" }};
+$icon-hover-color: {{ .Site.Params.Color.IconHover | default "#72b" }};
+
+// Quote
+$quote-color: {{ .Site.Params.Color.Quote | default "#585866" }};
+$quote-bg: {{ .Site.Params.Color.QuoteBackground | default "$white" }};
+$quote-border-color: {{ .Site.Params.Color.QuoteBorder | default "#c4e4f8" }};
+$quote-border-width: {{ if (.Site.Params.Color.QuoteShowBorder | default true) }}0.33em{{ else }}0{{ end }};
+
+// General region
+$region-bg: {{ .Site.Params.Color.RegionBackground | default "$secondary" }};
+$region-border-color: {{ .Site.Params.Color.RegionBorder | default "$boundary" }};
+
+// Paragraph
+$paragraph-align: {{ if .Site.Params.Justify | default false }}justify{{ else }}left{{ end }};
+
+
+////////////////////////
+// Import stylesheets //
+////////////////////////
+
 @import 'reset.min';
 @import 'layout';
 @import 'header';
