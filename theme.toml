@@ -2,11 +2,11 @@ name = "Butter"
 license = "MIT"
 licenseLink = "https://github.com/benfrankel/butter/blob/master/LICENSE"
 description = "Simple, smooth, soft, and creamy Hugo theme."
-homepage = "https://benfrankel.me/butter"
+homepage = "https://benfrankel.com/butter"
 tags = ["minimal", "simple", "smooth", "fast", "modular"]
 features = ["fast"]
 min_version = "0.37.1"
 
 [author]
   name = "Ben Frankel"
-  homepage = "https://benfrankel.me"
+  homepage = "https://benfrankel.com/"
