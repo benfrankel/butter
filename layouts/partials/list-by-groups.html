@@ -1,13 +1,16 @@
 <div>
+  {{ if (reflect.IsMap .Groups) }}
   {{ range $key, $taxonomy := .Groups }}
-  {{ if in $key "" }}
   {{ with (intersect $taxonomy.Pages $.Pages).ByDate.Reverse }}
   <h4>{{ $key | humanize | title }}</h4>
   {{ partial "list-group.html" . }}
   {{ end }}
+  {{ end }}
   {{ else }}
-  {{ with (intersect $taxonomy.Pages $.Pages).ByDate.Reverse }}
-  <h4>{{ $taxonomy.Key }}</h4>
+  {{ range .Groups }}
+  {{ $key := .Key }}
+  {{ with (intersect .Pages $.Pages).ByDate.Reverse }}
+  <h4>{{ $key }}</h4>
   {{ partial "list-group.html" . }}
   {{ end }}
   {{ end }}
