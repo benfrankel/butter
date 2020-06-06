@@ -1,25 +1,25 @@
 <footer id="site-footer" class="meta">
   <!-- Contact icons -->
   <span id="site-contact-icons">
-    {{ with .Site.Params.Email }}
+    {{ with .Site.Params.email }}
     <a href="mailto:{{ . }}" title="Email" alt="Email">
       {{ partial "svg/fa-envelope.svg" . }}
     </a>
     {{ end }}
     
-    {{ with .Site.Params.Twitter }}
+    {{ with .Site.Params.twitter }}
     <a href="https://twitter.com/{{ . }}" title="Twitter" alt="Twitter">
       {{ partial "svg/fa-twitter.svg" . }}
     </a>
     {{ end }}
     
-    {{ with .Site.Params.Github }}
+    {{ with .Site.Params.github }}
     <a href="https://github.com/{{ . }}" title="GitHub" alt="GitHub">
       {{ partial "svg/fa-github.svg" . }}
     </a>
     {{ end }}
 
-    {{ with .Site.Params.Linkedin }}
+    {{ with .Site.Params.linkedin }}
     <a href="https://linkedin.com/in/{{ . }}" title="Linkedin" alt="Linkedin">
       {{ partial "svg/fa-linkedin.svg" . }}
     </a>
@@ -32,13 +32,13 @@
   
   <!-- License notice -->
   <a id="site-license-notice"
-     href="{{ .Site.Params.LicenseURL | default (print .Site.BaseURL "doc/LICENSE") }}">
-    {{ .Site.Params.CopyrightNotice | default (print "Copyright - " .Site.Author) }}
+     href="{{ .Site.Params.licenseuRL | default (print .Site.BaseURL "doc/LICENSE") }}">
+    {{ .Site.Params.copyrightnotice | default (print "Copyright - " .Site.Author) }}
   </a>
   
   <!-- Attribution notice -->
   <a id="site-attribution-notice"
-     href="{{ .Site.Params.AttributionURL | default "https://gohugo.io" }}">
-    {{ .Site.Params.AttributionNotice | default "Powered by Hugo" }}
+     href="{{ .Site.Params.attributionurl | default "https://gohugo.io" }}">
+    {{ .Site.Params.attributionnotice | default "Powered by Hugo" }}
   </a>
 </footer>

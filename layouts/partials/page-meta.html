@@ -1,20 +1,20 @@
-{{ if or (.Params.ShowTime | default true) (.Params.ShowTaxonomy | default true) }}
+{{ if or (.Params.showtime | default true) (.Params.showtaxonomy | default true) }}
 <div class="meta-box meta">
 
-  {{ if (.Params.ShowTime | default true) }}
+  {{ if (.Params.showtime | default true) }}
   
   <div>
-    <span>{{ .Date.Format .Site.Params.DateForm }}</span>
+    <span>{{ .Date.Format .Site.Params.dateform }}</span>
     <br>
     <span>{{ .ReadingTime }} minute read</span>
   </div>
 
   {{ end }}
 
-  {{ if (.Params.ShowTaxonomy | default true) }}
+  {{ if (.Params.showtaxonomy | default true) }}
   
   <div>
-    {{ with .Params.Categories }}
+    {{ with .Params.categories }}
     <ul class="categories">
       {{ range . }}
       <li>
@@ -26,7 +26,7 @@
     <div>... not categorized</div>
     {{ end }}
     
-    {{ with .Params.Tags }}
+    {{ with .Params.tags }}
     <ul class="tags">
       {{ range . }}
       <li>

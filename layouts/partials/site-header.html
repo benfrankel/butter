@@ -4,7 +4,7 @@
   </a>
   
   <nav id="site-nav">
-    {{ range .Site.Params.Navigation }}
+    {{ range .Site.Params.navigation }}
     <a href="{{ $.Site.BaseURL }}{{ index . 1 }}">{{ index . 0 }}</a>
     {{ end }}
   </nav>
